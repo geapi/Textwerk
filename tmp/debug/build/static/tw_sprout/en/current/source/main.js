@@ -27,7 +27,7 @@ TwSprout.main = function main() {
   // ex: TwSprout.contactsController.set('content',TwSprout.contacts); 
 
 	var query = SC.Query.local(TwSprout.Pubmed, { orderBy: 'guid,title' });
-	var results = TwSprout.store.find(query);
+	var results = TwSprout.store.find(TwSprout.RESULTS_QUERY);
 	TwSprout.pubmedController.set('content', results);
 
 } ;

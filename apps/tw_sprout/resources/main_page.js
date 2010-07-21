@@ -28,12 +28,15 @@ TwSprout.mainPage = SC.Page.design({
 		        layout: { centerY: 0, height: 24, right: 120, width: 200 },
 		        controlSize: SC.LARGE_CONTROL_SIZE,
 		        fontWeight: SC.BOLD_WEIGHT,
-		        value:   'type your search here'
+		        value:   'type your search here',
+				valueBinding: 'TwSprout.pubmedController.searchTerm'
 		      }),  
 
 		 searchButton: SC.ButtonView.design({
 	        layout: { centerY: 0, height: 24, right: 12, width: 100 },
-	        title:  "Search"
+	        title:  "Search",
+			target: "TwSprout.pubmedController",
+			action: "searchPubmed"
 	      })
 	    }),
 
@@ -47,30 +50,7 @@ TwSprout.mainPage = SC.Page.design({
 			rowHeight: 200, 
 			contentBinding: 'TwSprout.pubmedController.arrangedObjects',
 			selectionBinding: 'TwSprout.pubmedController.selection', 
-			exampleView: TwSprout.PubmedEntryView,
-		    /*childViews: 'titleView authorView pmidView'.w(), 
-		            titleView: SC.LabelView.design({
-			        	layout: { centerY: 0, height: 24, left: 8, width: 200 },
-			        	controlSize: SC.LARGE_CONTROL_SIZE,
-			        	fontWeight: SC.BOLD_WEIGHT,
-			        	contentValueKey: "title"
-			      		}),
-			 		authorView: SC.TextFieldView.design({
-			        	layout: { centerY: 0, height: 200, left: 8, width: 200 },
-			        	controlSize: SC.LARGE_CONTROL_SIZE,
-			        	//fontWeight: SC.NORMAL_WEIGHT,
-			        	contentValueKey: "authors"
-			      		}),  
-			 		pmidView: SC.ButtonView.design({
-		        		layout: { centerY: 0, height: 24, left: 8, width: 200 },
-			        	controlSize: SC.LARGE_CONTROL_SIZE,
-			        	//fontWeight: SC.NORMAL_WEIGHT,
-			        	contentValueKey: "pmid"
-			      		}),
-		      		}) */
-			
-			contentValueKey: "title",     
-			//contentCheckboxKey: "isDone",
+			exampleView: TwSprout.PubmedEntryView
            
 	      })
 	    }),

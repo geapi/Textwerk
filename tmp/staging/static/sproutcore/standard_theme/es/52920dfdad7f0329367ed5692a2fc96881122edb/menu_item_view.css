@@ -1,0 +1,12 @@
+.sc-theme .sc-menu-item {  
+  display:block !important;
+}
+
+.sc-menu-item div.checkbox {
+  background-image: url('/static/sproutcore/standard_theme/es/52920dfdad7f0329367ed5692a2fc96881122edb/images/icons/mini_454545.png'); 
+  background-position: -66px -147px;
+}
+
+.sc-menu-item.focus div.checkbox {
+  background-image: url('/static/sproutcore/standard_theme/es/52920dfdad7f0329367ed5692a2fc96881122edb/images/icons/mini_ffffff.png'); 
+}

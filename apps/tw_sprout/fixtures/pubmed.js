@@ -16,7 +16,8 @@ TwSprout.Pubmed.FIXTURES = [
 
 
 	{guid: 2, 
-	 authors: "Delassus GS, Cho H, Hoang S, Eliceiri GL.", title: "Many new down- and up-regulatory signaling pathways, from known cancer progression suppressors to matrix metalloproteinases, differ widely in cells of various cancers",
+	 authors: "Delassus GS, Cho H, Hoang S, Eliceiri GL.", 
+	title: "Many new down- and up-regulatory signaling pathways, from known cancer progression suppressors to matrix metalloproteinases, differ widely in cells of various cancers",
 	date: "2010 Apr 15", 
 	pmid: "20432456"},
 
@@ -41,32 +42,5 @@ TwSprout.Pubmed.FIXTURES = [
 	date: "2010 Jan-Mar;15(1):101-6", 
 	pmid: "20414935"}
 
-  
-  // TODO: Add your data fixtures here.
-  // All fixture records must have a unique primary key (default 'guid').  See 
-  // the example below.
-  
-
-
-
-  // { guid: 1,
-  //   firstName: "Michael",
-  //   lastName: "Scott" },
-  //
-  // { guid: 2,
-  //   firstName: "Dwight",
-  //   lastName: "Schrute" },
-  //
-  // { guid: 3,
-  //   firstName: "Jim",
-  //   lastName: "Halpert" },
-  //
-  // { guid: 4,
-  //   firstName: "Pam",
-  //   lastName: "Beesly" },
-  //
-  // { guid: 5,
-  //   firstName: "Ryan",
-  //   lastName: "Howard" }
 
 ];

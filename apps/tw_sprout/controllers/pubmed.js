@@ -21,6 +21,29 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	    } else ret = "No results";
 
 	    return ret;
-	  }.property('length').cacheable()
+	  }.property('length').cacheable(),
+	
+	hightlight: function(){
+		var content = this.get('content');
+		var authors = content.get('authors');
+	},
+	resultsDidChange: function(){ 
+		//var content = this.get('content');
+		results = TwSprout.store.find(TwSprout.Pubmed);
+		console.log("new content -> %@,".fmt(results.getEach('pmid')));
+	}.observes('content'),  
+	
+	isSelected: function(){
+	   console.log('just got selected');   
+	}.observes('selected'),
+	
+   //arrangedObjects: function(){
+   //	sc_super();
+   //}
+	searchPubmed: function(){
+		//alert('search was triggered with: '+this.searchTerm);
+		var results = TwSprout.store.find(TwSprout.RESULTS_QUERY);
+		TwSprout.pubmedController.set('content', results);
+	}
 
 }) ;

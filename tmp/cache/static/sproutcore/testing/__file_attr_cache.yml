@@ -1,54 +1,157 @@
 --- 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/english.lproj: 
+  digest: 
+    mtime: 1272977323
+    value: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/english.lproj/runner.css: 
+  scan_source: 
+    mtime: 1279711491
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/extras.js: 
+  scan_source: 
+    mtime: 1279711491
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/english.lproj/testsuite.css: 
+  scan_source: 
+    mtime: 1279711491
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/equiv.js: 
+  scan_source: 
+    mtime: 1279711491
+    value: []
+
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/extras.js: 
+  digest: 
+    mtime: 1272977323
+    value: 7199d41063b835ebda71aa8ae5e88573c5660087
   scan_source: 
     mtime: 1272977323
     value: []
 
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/suite.js: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/qunit.js: 
   scan_source: 
-    mtime: 1272977323
-    value: []
-
+    mtime: 1279711491
+    value: 
+    - - sc_require
+      - "'"
+      - jquery
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/qunit.js: 
+  digest: 
+    mtime: 1272977323
+    value: 45e454e4babd53ef28ef5d57c4ade5d356c28517
   scan_source: 
     mtime: 1272977323
     value: 
     - - sc_require
       - "'"
       - jquery
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/dump.js: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/suite.js: 
+  digest: 
+    mtime: 1272977323
+    value: a6b74949650a43e81d51ecee72939fc5936b54a7
   scan_source: 
     mtime: 1272977323
     value: []
 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/plan.js: 
+  scan_source: 
+    mtime: 1279711491
+    value: 
+    - - sc_require
+      - "'"
+      - jquery
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system: 
+  digest: 
+    mtime: 1272977323
+    value: 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/english.lproj/testsuite.css: 
+  digest: 
+    mtime: 1272977323
+    value: b60c25140d073397bd94dacf49a7b12e6198229a
+  scan_source: 
+    mtime: 1272977323
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/dump.js: 
+  digest: 
+    mtime: 1272977323
+    value: 45032678a78f9614fd3c15f85ed975c2a810ff27
+  scan_source: 
+    mtime: 1272977323
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/core.js: 
+  scan_source: 
+    mtime: 1279711491
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/core.js: 
+  digest: 
+    mtime: 1272977323
+    value: fa10b697d2ec7fe5b4089ebcc807c1489cfb53c6
   scan_source: 
     mtime: 1272977323
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/equiv.js: 
+  digest: 
+    mtime: 1272977323
+    value: ba29d7ffc655689419fde8662d6fc52860f95e4b
   scan_source: 
     mtime: 1272977323
     value: []
 
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/core.js: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/jquery.js: 
   scan_source: 
-    mtime: 1272977323
+    mtime: 1279711491
     value: []
 
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/utils.js: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/dump.js: 
   scan_source: 
-    mtime: 1272977323
+    mtime: 1279711491
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/plan.js: 
+  digest: 
+    mtime: 1272977323
+    value: 81ee4e2f8328dd2199e84404c5b4e0148cf5c8d3
   scan_source: 
     mtime: 1272977323
     value: 
     - - sc_require
       - "'"
       - jquery
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/utils.js: 
+  digest: 
+    mtime: 1272977323
+    value: fc5a9f91928f0b110cec2cba24ae89e2b77b5589
+  scan_source: 
+    mtime: 1272977323
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/english.lproj/additions.css: 
+  digest: 
+    mtime: 1272977323
+    value: 3b6d1fc99cd37eab51822b0e78329dbefcf317e3
+  scan_source: 
+    mtime: 1272977323
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/jquery.js: 
+  digest: 
+    mtime: 1272977323
+    value: 09219147eaefc61bdbb2e569a4e1e07fb5cc5799
+  scan_source: 
+    mtime: 1272977323
+    value: []
+
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/runner.js: 
+  digest: 
+    mtime: 1272977323
+    value: 6a46f36055c0b70a3b816a716d696beb2ed9fc95
   scan_source: 
     mtime: 1272977323
     value: 
@@ -58,18 +161,36 @@
     - - sc_require
       - "'"
       - system/plan
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/jquery.js: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/runner.js: 
   scan_source: 
-    mtime: 1272977323
-    value: []
-
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/english.lproj/additions.css: 
+    mtime: 1279711491
+    value: 
+    - - sc_require
+      - "'"
+      - jquery
+    - - sc_require
+      - "'"
+      - system/plan
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/system/suite.js: 
   scan_source: 
-    mtime: 1272977323
+    mtime: 1279711491
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/english.lproj/runner.css: 
+  digest: 
+    mtime: 1272977323
+    value: 06b0b30ceecad5f5514441b10709a8de5a1c6d93
   scan_source: 
     mtime: 1272977323
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/english.lproj/additions.css: 
+  scan_source: 
+    mtime: 1279711491
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/testing/utils.js: 
+  scan_source: 
+    mtime: 1279711491
     value: []
 

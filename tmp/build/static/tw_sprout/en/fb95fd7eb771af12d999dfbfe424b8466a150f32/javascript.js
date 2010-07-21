@@ -1,0 +1,18 @@
+(function(){var a="sproutcore/standard_theme";if(!SC.BUNDLE_INFO){throw"SC.BUNDLE_INFO is not defined!"
+}if(SC.BUNDLE_INFO[a]){return}SC.BUNDLE_INFO[a]={requires:["sproutcore/empty_theme"],styles:["/static/sproutcore/standard_theme/en/52920dfdad7f0329367ed5692a2fc96881122edb/stylesheet-packed.css","/static/sproutcore/standard_theme/en/52920dfdad7f0329367ed5692a2fc96881122edb/stylesheet.css"],scripts:["/static/sproutcore/standard_theme/en/52920dfdad7f0329367ed5692a2fc96881122edb/javascript-packed.js"]}
+})();TwSprout=SC.Application.create({NAMESPACE:"TwSprout",VERSION:"0.1.0",store:SC.Store.create().from(SC.Record.fixtures)});
+TwSprout.pubmedController=SC.ArrayController.create({resultcount:function(){var a=this.get("length"),b;
+if(a&&a>0){b=a===1?"1 result":"%@ results".fmt(a)}else{b="No results"}return b}.property("length").cacheable()});
+TwSprout.Pubmed=SC.Record.extend({});TwSprout.PubmedEntryView=SC.View.extend(SC.ContentDisplay,{classNames:["custom-list-item-view"],displayProperties:"isSelected".w(),contentDisplayProperties:"guid title authors date pmid".w(),render:function(d,a){var j=this.get("content");
+var c=j.get("guid");var l=j.get("title");var k=j.get("authors");var e=j.get("date");
+var i=j.get("pmid");var b=this.get("isSelected");var h=!b;var g=b;var f={standard:h,selected:g};
+d=d.setClass(f);d=d.begin("p").addClass("name").push("%@ %@".fmt("("+c+")",l)).end();
+d=d.begin("p").addClass("item").addClass("company");d=d.begin("span").addClass("label").push("Authors:").end();
+d=d.begin("span").addClass("value").push(k).end();d=d.end();d=d.begin("p").addClass("item").addClass("date");
+d=d.begin("span").addClass("label").push("Date:").end();d=d.begin("span").addClass("value").push(e).end();
+d=d.end();d=d.begin("p").addClass("item").addClass("date");d=d.begin("span").addClass("label").push("PMID:").end();
+d=d.begin("span").addClass("value").push('<a href="http://www.ncbi.nlm.nih.gov/pubmed/'+i+'">'+i+"</a>").end();
+d=d.end();arguments.callee.base.apply(this,arguments)}});TwSprout.mainPage=SC.Page.design({mainPane:SC.MainPane.design({childViews:"middleView topView bottomView".w(),topView:SC.ToolbarView.design({layout:{top:0,left:0,right:0,height:36},childViews:"labelView searchField searchButton".w(),anchorLocation:SC.ANCHOR_TOP,labelView:SC.LabelView.design({layout:{centerY:0,height:24,left:8,width:200},controlSize:SC.LARGE_CONTROL_SIZE,fontWeight:SC.BOLD_WEIGHT,value:"PubMed TextWerk"}),searchField:SC.TextFieldView.design({layout:{centerY:0,height:24,right:120,width:200},controlSize:SC.LARGE_CONTROL_SIZE,fontWeight:SC.BOLD_WEIGHT,value:"type your search here"}),searchButton:SC.ButtonView.design({layout:{centerY:0,height:24,right:12,width:100},title:"Search"})}),middleView:SC.ScrollView.design({hasHorizontalScroller:NO,layout:{top:36,bottom:32,left:0,right:0},backgroundColor:"white",contentView:SC.GridView.design({columnWidth:220,rowHeight:200,contentBinding:"TwSprout.pubmedController.arrangedObjects",selectionBinding:"TwSprout.pubmedController.selection",exampleView:TwSprout.PubmedEntryView})}),bottomView:SC.ToolbarView.design({layout:{bottom:0,left:0,right:0,height:32},childViews:"summaryView".w(),anchorLocation:SC.ANCHOR_BOTTOM,summaryView:SC.LabelView.design({layout:{centerY:0,height:18,left:20,right:20},textAlign:SC.ALIGN_CENTER,valueBinding:"TwSprout.pubmedController.resultcount"})})})});
+TwSprout.main=function main(){TwSprout.getPath("mainPage.mainPane").append();var b=SC.Query.local(TwSprout.Pubmed,{orderBy:"guid,title"});
+var a=TwSprout.store.find(b);TwSprout.pubmedController.set("content",a)};function main(){TwSprout.main()
+};

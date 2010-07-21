@@ -1,0 +1,182 @@
+--- 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/mixins/button.js: 
+  digest: 
+    mtime: 1272977322
+    value: 978473162389887eed26d6089ad1aa15b9a604b5
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/ext/view.js: 
+  digest: 
+    mtime: 1272977322
+    value: df1e1c9a938d76f346628bdf0752d548bd78bbd9
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/ext: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/core.js: 
+  digest: 
+    mtime: 1272977322
+    value: ef31037db6ebadeff5848dad5576ba1a85f242df
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/views: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/mixins: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/ext/page.js: 
+  digest: 
+    mtime: 1272977322
+    value: e2e916add86d46d9d20e5fe9cdb366769ea5b14b
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/css/css_rule.js: 
+  digest: 
+    mtime: 1272977322
+    value: b248a1939fbbb11d3dc7ff6302646faf49cdd2d1
+  scan_source: 
+    mtime: 1272977322
+    value: 
+    - - sc_require
+      - "'"
+      - css/css_style
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/css: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/views/button.js: 
+  digest: 
+    mtime: 1272977322
+    value: fbb6619fee83ea65b41a7ac579a220f7cf2b073f
+  scan_source: 
+    mtime: 1272977322
+    value: 
+    - - sc_require
+      - "'"
+      - views/designer
+    - - sc_require
+      - "'"
+      - mixins/button
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/coders/localization.js: 
+  digest: 
+    mtime: 1272977322
+    value: 09afa03a3a2184f2d44bd703f7ad626c1a565c42
+  scan_source: 
+    mtime: 1272977322
+    value: 
+    - - sc_require
+      - "'"
+      - coders/object
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/coders: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/views/selection_handles.js: 
+  digest: 
+    mtime: 1272977322
+    value: 6861611e94bbfde565ec0273f34d982724e83c5b
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/english.lproj: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/views/tab.js: 
+  digest: 
+    mtime: 1272977322
+    value: 639a671e5e576affd8ec11552e5831c6a8eec728
+  scan_source: 
+    mtime: 1272977322
+    value: 
+    - - sc_require
+      - "'"
+      - views/designer
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/coders/design.js: 
+  digest: 
+    mtime: 1272977322
+    value: 8c8e37dc6a1790681b3d67d42dcb372711b9e385
+  scan_source: 
+    mtime: 1272977322
+    value: 
+    - - sc_require
+      - "'"
+      - coders/object
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/english.lproj/selection_handles.css: 
+  digest: 
+    mtime: 1272977322
+    value: dd8e42f0383dcbfa225f610d5231cb40564917fe
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/coders/object.js: 
+  digest: 
+    mtime: 1272977322
+    value: f3ea720ea5f5433906f03ce1c1c694b343a474ee
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/controllers/page_design.js: 
+  digest: 
+    mtime: 1272977322
+    value: 519c5eb07c87a4df0b9fb7ecde8ab51d0de6f7a0
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/views/label.js: 
+  digest: 
+    mtime: 1272977322
+    value: da2141631f951ccae8cfe33ed4d6f04263a3d237
+  scan_source: 
+    mtime: 1272977322
+    value: 
+    - - sc_require
+      - "'"
+      - views/designer
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/views/designer.js: 
+  digest: 
+    mtime: 1272977322
+    value: fe1dbd1998a3ab0257c1e388db4b11ad6eb46f36
+  scan_source: 
+    mtime: 1272977322
+    value: []
+
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/controllers: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/css/css_style_sheet.js: 
+  digest: 
+    mtime: 1272977322
+    value: 5daa668686c194d4fa6d142d0be52b4438a36d5a
+  scan_source: 
+    mtime: 1272977322
+    value: 
+    - - sc_require
+      - "'"
+      - css/css_rule
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/designer/css/css_style.js: 
+  digest: 
+    mtime: 1272977322
+    value: 9a45d3824a03ded8c873a565374b8b6a3c1fa0b0
+  scan_source: 
+    mtime: 1272977322
+    value: []
+

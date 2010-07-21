@@ -1,10 +1,10 @@
-div.custom-list-item-view div.top {
+div.custom-list-item-view div.searchResultsContainer {
   position: absolute;
   top: 0px;
-  left: 0px;
-  right: 0px;
+  left: 50px;
+  right: 50px;
   height: 35px;
-  border-width: 0px;
+  border-width: 1px;
 }
 
 div.custom-list-item-view div.top.standard {
@@ -45,7 +45,7 @@ div.custom-list-item-view p.item {
 margin-top: 5px;
 }
 
-div.custom-list-item-view p.company, div.custom-list-item-view p.date {
+div.custom-list-item-view p.authors, div.custom-list-item-view p.date, div.custom-list-item-view p.pmid {
   margin: 5px 0px 0px 5px;
 }
 

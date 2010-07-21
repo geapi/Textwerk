@@ -6,11 +6,13 @@
 
 /** @class
 
-(Document Your View Here)
+Custom view that renders the overview of a pubmed entry
 
 @extends SC.View
 */
-TwSprout.PubmedEntryView = SC.View.extend(SC.ContentDisplay, {
+TwSprout.PubmedEntryView = SC.View.extend(SC.ContentDisplay, {  
+	
+	contentBinding: 'TwSprout.pubmedController.results',
 
 	classNames: ['custom-list-item-view'],
 
@@ -33,13 +35,13 @@ TwSprout.PubmedEntryView = SC.View.extend(SC.ContentDisplay, {
 		var selected = isSelected;
 		var classes = { 'standard': standard, 'selected': selected };
 
-		//context = context.begin().addClass('top');
+		//context = context.begin().addClass('searchResultsContainer');
 		context = context.setClass(classes);
-		context = context.begin('p').addClass('name').push('%@ %@'.fmt('('+id+')',title)).end();
+		context = context.begin('p').addClass('item').addClass('name').push('%@ %@'.fmt('('+id+')',title)).end();
 		//context = context.end(); // div.top
 
 		//context = context.begin().addClass('bottom');
-		context = context.begin('p').addClass('item').addClass('company');
+		context = context.begin('p').addClass('item').addClass('authors');
 		context = context.begin('span').addClass('label').push('Authors:').end();
 		context = context.begin('span').addClass('value').push(authors).end();
 		context = context.end(); // p.item.company
@@ -47,11 +49,11 @@ TwSprout.PubmedEntryView = SC.View.extend(SC.ContentDisplay, {
 		context = context.begin('span').addClass('label').push('Date:').end();
 		context = context.begin('span').addClass('value').push(date).end();
 		context = context.end() // p.item.title  
-		context = context.begin('p').addClass('item').addClass('date');
+		context = context.begin('p').addClass('item').addClass('pmid');
 		context = context.begin('span').addClass('label').push('PMID:').end();
 		context = context.begin('span').addClass('value').push('<a href="http://www.ncbi.nlm.nih.gov/pubmed/'+pmid+'">'+pmid+'</a>').end();
 		context = context.end() // p.item.pmid
-		//context = context.end() // div.bottom
+		//context = context.end() // div.searchResultsContainer
 
 		arguments.callee.base.apply(this,arguments);
 	}
