@@ -49,6 +49,7 @@ TwSprout.mainPage = SC.Page.design({
 			columnWidth: 220,
 			rowHeight: 200, 
 			contentBinding: 'TwSprout.pubmedController.arrangedObjects',
+			valueBinding: 'TwSprout.pubmedController.arrangedObjects',
 			selectionBinding: 'TwSprout.pubmedController.selection', 
 			exampleView: TwSprout.PubmedEntryView
            
@@ -63,7 +64,6 @@ TwSprout.mainPage = SC.Page.design({
 		  summaryView: SC.LabelView.design({
 		        layout: { centerY: 0, height: 18, left: 20, right: 20 },
 		        textAlign: SC.ALIGN_CENTER,
-
 		        valueBinding: "TwSprout.pubmedController.resultcount"
 		  })
 	    })

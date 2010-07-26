@@ -1,23 +1,7 @@
 --- 
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/bootstrap/core.js: 
-  digest: 
-    mtime: 1272977322
-    value: a134f66ca05aeb437a958d0baa56e9b7411deb0d
-  scan_source: 
-    mtime: 1272977322
-    value: []
-
 /Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/bootstrap/core.js: 
   scan_source: 
     mtime: 1279711491
-    value: []
-
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/bootstrap/system/browser.js: 
-  digest: 
-    mtime: 1272977322
-    value: 36593dd531911e4573fdb9fe4201fbf18060f0a2
-  scan_source: 
-    mtime: 1272977322
     value: []
 
 /Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/bootstrap/system/browser.js: 
@@ -37,29 +21,3 @@
     mtime: 1279711491
     value: []
 
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/bootstrap/system/loader.js: 
-  digest: 
-    mtime: 1272977322
-    value: b62c36061e8c9e8ec5f2f3f9895dd24de6ff1a7d
-  scan_source: 
-    mtime: 1272977322
-    value: []
-
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/bootstrap/README: 
-  digest: 
-    mtime: 1272977322
-    value: 2d03a6fee9633e23707d1cf0dee43511132f72ed
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/bootstrap/setup_body_class_names.js: 
-  digest: 
-    mtime: 1272977322
-    value: 9c0b8e399f9f2543bdae48360bf8d39790df1b87
-  scan_source: 
-    mtime: 1272977322
-    value: 
-    - - sc_resource
-      - "'"
-      - setup_body_class_names
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/frameworks/bootstrap/system: 
-  digest: 
-    mtime: 1272977322
-    value: 

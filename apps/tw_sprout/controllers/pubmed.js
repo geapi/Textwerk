@@ -39,14 +39,20 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	}.observes('selected'),
 	
    arrangedObjects: function(){
-	   Galert(this.get('status'));
+	   //alert(this.get('status'));
+	   console.log(this.get('content'));
    	   return this.get('content');
    }.property('status').cacheable(),
 	searchPubmed: function(){
-		//alert('search was triggered with: '+this.searchTerm);
+		console.log('search was triggered with: '+this.searchTerm);
 		//TwSprout.store.reset();
 		TwSprout.pubmedController.set('content', null);
+		TwSprout.store.reset();
 		var results = TwSprout.store.find(TwSprout.RESULTS_QUERY);
+		console.log("results are: "+results);
+		results.refresh(); // this refresh makes sure that I get the update RecordArray displayed in the view
+		//var results = TwSprout.store.find(SC.Query.remote(TwSprout.Pubmed, {orderBy: 'guid,title'}));
+		
 		TwSprout.pubmedController.set('content', results);
 	}
 

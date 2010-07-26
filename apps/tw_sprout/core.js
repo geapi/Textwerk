@@ -26,7 +26,7 @@ TwSprout = SC.Application.create(
 
 
 	store: SC.Store.create({ 
-  		commitRecordsAutomatically: NO
+  		commitRecordsAutomatically: YES
 		}).from('TwSprout.PubmedDataSource')
   
   // TODO: Add global constants or singleton objects needed by your app here.
