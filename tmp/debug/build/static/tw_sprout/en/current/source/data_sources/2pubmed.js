@@ -15,7 +15,7 @@ TwSprout.RESULTS_QUERY = SC.Query.local(TwSprout.Pubmed, {
   orderBy: 'guid,title'
 });
 
-TwSprout.Pubmed = SC.DataSource.extend(
+TwSprout.Pubmed2 = SC.DataSource.extend(
 /** @scope TwSprout.Pubmed.prototype */ {
 
   // ..........................................................

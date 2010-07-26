@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   TwSprout.PubmedDataSource
+// Project:   TwSprout.Pubmed
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
 /*globals TwSprout */
@@ -11,25 +11,22 @@
   @extends SC.DataSource
 */
 sc_require('models/pubmed');
-TwSprout.RESULTS_QUERY = SC.Query.remote(TwSprout.Pubmed, {
+TwSprout.RESULTS_QUERY = SC.Query.local(TwSprout.Pubmed, {
   orderBy: 'guid,title'
 });
 
-TwSprout.PubmedDataSource = SC.DataSource.extend(
-/** @scope TwSprout.PubmedDataSource.prototype */ {
+TwSprout.Pubmed = SC.DataSource.extend(
+/** @scope TwSprout.Pubmed.prototype */ {
 
   // ..........................................................
   // QUERY SUPPORT
   // 
 
   fetch: function(store, query, terms) {
-	
+
      if (query === TwSprout.RESULTS_QUERY) {
 		alert('got a query');
-		var recordType = query.get('recordType'); 
-		var url = recordType.prototype.pubmedurl;
-		//alert("search term is: "+TwSprout.pubmedController.get('searchTerm'));
-	    SC.Request.getUrl(url+'?term='+TwSprout.pubmedController.get('searchTerm')).header({'Accept': 'application/json'}).json()
+	    SC.Request.getUrl('/searchPubmed?term=ovarian+cancer').header({'Accept': 'application/json'}).json()
 	      .notify(this, 'didFetchResults', store, query)
 	      .send();
 	    return YES;
@@ -39,23 +36,20 @@ TwSprout.PubmedDataSource = SC.DataSource.extend(
   	},
 
 	didFetchResults: function(response, store, query) {
-		  if (SC.ok(response)) {
-			//alert("trying to give out results "+ response.get('body').content + " who's the store: "+store+ "record type: "+query.get('recordType'))
-		     var storeKeys = store.loadRecords(query.get('recordType'), response.get('body').content);
-
-		store.loadQueryResults(query, storeKeys);
-		store.dataSourceDidFetchQuery(query);
-		} else store.dataSourceDidErrorQuery(query, response);
+	  if (SC.ok(response)) {
+	    store.loadRecords(TwSprout.Pubmed, response.get('body').content);
+	    store.dataSourceDidFetchQuery(query);
+	
+	  } else store.dataSourceDidErrorQuery(query, response);
 	},
-
 
   // ..........................................................
   // RECORD SUPPORT
   // 
   
   retrieveRecord: function(store, storeKey) {
-  	if (SC.kindOf(store.recordTypeFor(storeKey), TwSprout.Pubmed)) {
-    
+  if (SC.kindOf(store.recordTypeFor(storeKey), TwSprout.Pubmed)) {
+
     var url = store.idFor(storeKey);
     SC.Request.getUrl(url).header({
                 'Accept': 'application/json'
@@ -63,7 +57,7 @@ TwSprout.PubmedDataSource = SC.DataSource.extend(
       .notify(this, 'didRetrieveResults', store, storeKey)
       .send();
     return YES;
-    
+
   	} else return NO;
   },
 
@@ -100,3 +94,4 @@ TwSprout.PubmedDataSource = SC.DataSource.extend(
   }
   
 }) ;
+; if ((typeof SC !== 'undefined') && SC && SC.scriptDidLoad) SC.scriptDidLoad('tw_sprout');

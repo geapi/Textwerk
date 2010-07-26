@@ -1,25 +1,20 @@
 --- 
-/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/strings.js: 
-  scan_source: 
-    mtime: 1277399683
-    value: []
-
-/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/main_page.css: 
-  scan_source: 
-    mtime: 1277399683
-    value: []
-
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/tests/controllers: 
-  digest: 
-    mtime: 1272977322
-    value: 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/tests/controllers/targets.js: 
   digest: 
     mtime: 1272977322
     value: bcab7d216bf2f0d93b5537db4c16a6d59b1937af
-/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/loading.rhtml: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/tests/controllers: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/main_page.css: 
   scan_source: 
-    mtime: 1277399683
+    mtime: 1279711491
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/strings.js: 
+  scan_source: 
+    mtime: 1279711491
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/strings.js: 
@@ -30,9 +25,9 @@
     mtime: 1272977322
     value: []
 
-/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/main_page.js: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/loading.rhtml: 
   scan_source: 
-    mtime: 1277399683
+    mtime: 1279711491
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/main_page.js: 
@@ -43,9 +38,9 @@
     mtime: 1272977322
     value: []
 
-/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/main.js: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/main_page.js: 
   scan_source: 
-    mtime: 1277399683
+    mtime: 1279711491
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/main_page.css: 
@@ -54,6 +49,11 @@
     value: 280fd606bc545a52161889274721ba14ca8b3cbb
   scan_source: 
     mtime: 1272977322
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/main.js: 
+  scan_source: 
+    mtime: 1279711491
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj/loading.rhtml: 
@@ -72,22 +72,17 @@
     mtime: 1272977322
     value: []
 
-/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/core.js: 
-  scan_source: 
-    mtime: 1277399683
-    value: []
-
-/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj: 
-  digest: 
-    mtime: 1272977322
-    value: 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/tests: 
   digest: 
     mtime: 1272977322
     value: 
-/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/controllers/targets.js: 
+/usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/english.lproj: 
+  digest: 
+    mtime: 1272977322
+    value: 
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/core.js: 
   scan_source: 
-    mtime: 1277399683
+    mtime: 1279711491
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/controllers/targets.js: 
@@ -96,6 +91,11 @@
     value: c23e0a3d43a4432519cc0d10d6a2e4efa4c371c1
   scan_source: 
     mtime: 1272977322
+    value: []
+
+/Library/Ruby/Gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/controllers/targets.js: 
+  scan_source: 
+    mtime: 1279711491
     value: []
 
 /usr/local/lib/ruby/gems/1.8/gems/sproutcore-1.0.1046/frameworks/sproutcore/apps/welcome/core.js: 
