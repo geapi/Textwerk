@@ -28,8 +28,19 @@ TwSprout.mainPage = SC.Page.design({
 		        layout: { centerY: 0, height: 24, right: 120, width: 200 },
 		        controlSize: SC.LARGE_CONTROL_SIZE,
 		        fontWeight: SC.BOLD_WEIGHT,
-		        value:   'type your search here',
-				valueBinding: 'TwSprout.pubmedController.searchTerm'
+		        hint:   'type your search here',
+				valueBinding: 'TwSprout.pubmedController.searchTerm',
+				target: "TwSprout.pubmedController",
+				action: "newSearch",
+				keyDown: function(evt) {
+ 					sc_super(); // necessary to guarantee regular handling of keyDown events, want to avoid that this overwrite messes everything up
+					if (evt.charCode === 13) {
+							TwSprout.pubmedController.searchPubmed(); // trigger the search after we've seen an "enter"
+					        return YES;
+					      } else {
+					        return NO;
+					      }
+				}
 		      }),  
 
 		 searchButton: SC.ButtonView.design({

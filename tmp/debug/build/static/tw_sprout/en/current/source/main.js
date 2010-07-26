@@ -24,7 +24,7 @@ TwSprout.main = function main() {
   // This will make your app come alive!
 
 	//var query = SC.Query.remote(TwSprout.Pubmed, { orderBy: 'guid,title' });
-	//var results = TwSprout.store.find(TwSprout.RESULTS_QUERY);
+	//var results =  TwSprout.store.find(TwSprout.RESULTS_QUERY)
 	//var results = TwSprout.store.find(query);
 	//TwSprout.pubmedController.set('content', results);
 
