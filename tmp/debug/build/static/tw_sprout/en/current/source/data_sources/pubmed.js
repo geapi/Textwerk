@@ -39,9 +39,13 @@ TwSprout.PubmedDataSource = SC.DataSource.extend(
   	},
 
 	didFetchResults: function(response, store, query) {
+		TwSprout.pubmedController.set('searching', NO);
 		  if (SC.ok(response)) {
 			//alert("trying to give out results "+ response.get('body').content + " who's the store: "+store+ "record type: "+query.get('recordType'))
 		     var storeKeys = store.loadRecords(query.get('recordType'), response.get('body').content);
+		     if(response.get('body').content.length === 0){
+				TwSprout.pubmedController.set('noResults', YES);
+			 }
 
 		store.loadQueryResults(query, storeKeys);
 		//store.dataSourceDidFetchQuery(query);

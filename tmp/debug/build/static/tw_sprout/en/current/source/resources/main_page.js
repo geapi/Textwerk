@@ -15,7 +15,7 @@ TwSprout.mainPage = SC.Page.design({
 
 	    topView: SC.ToolbarView.design({
 	      layout: { top: 0, left: 0, right: 0, height: 36 }, 
-		  childViews: 'labelView searchField searchButton'.w(),
+		  childViews: 'labelView loadingImage searchField searchButton'.w(),
 	      anchorLocation: SC.ANCHOR_TOP,
 	
 		 labelView: SC.LabelView.design({
@@ -24,6 +24,12 @@ TwSprout.mainPage = SC.Page.design({
 		        fontWeight: SC.BOLD_WEIGHT,
 		        value:   'PubMed TextWerk'
 		      }),
+		 loadingImage: SC.ImageView.design({
+		    layout: { top: 8, height: 16,  right: 350, width: 16 },
+		    value: '/static/tw_sprout/en/current/resources/images/loading.gif?1274887029',
+		    useImageCache: NO,
+		    isVisibleBinding: 'TwSprout.pubmedController.searching'
+		  }),
 		 searchField: SC.TextFieldView.design({
 		        layout: { centerY: 0, height: 24, right: 120, width: 200 },
 		        controlSize: SC.LARGE_CONTROL_SIZE,
@@ -33,9 +39,11 @@ TwSprout.mainPage = SC.Page.design({
 				target: "TwSprout.pubmedController",
 				action: "newSearch",
 				keyDown: function(evt) {
- 					arguments.callee.base.apply(this,arguments); // necessary to guarantee regular handling of keyDown events, want to avoid that this overwrite messes everything up
+ 					arguments.callee.base.apply(this,arguments); // necessary to guarantee regular handling of keyDown events, 
+								// want to avoid that this overwrite messes everything up
 					if (evt.charCode === 13) {
-							TwSprout.pubmedController.searchPubmed(); // trigger the search after we've seen an "enter"
+						// trigger the search after we've seen an "enter", seems to have hickups in FF
+							TwSprout.pubmedController.searchPubmed(); 
 					        return YES;
 					      } else {
 					        return NO;
@@ -55,16 +63,15 @@ TwSprout.mainPage = SC.Page.design({
 	      hasHorizontalScroller: NO,
 	      layout: { top: 36, bottom: 32, left: 0, right: 0 },
 	      backgroundColor: 'white',
-
-	      contentView: SC.GridView.design({
-			columnWidth: 220,
-			rowHeight: 200, 
-			contentBinding: 'TwSprout.pubmedController.arrangedObjects',
-			valueBinding: 'TwSprout.pubmedController.arrangedObjects',
-			selectionBinding: 'TwSprout.pubmedController.selection', 
-			exampleView: TwSprout.PubmedEntryView
-           
-	      })
+	     	contentView: SC.GridView.design({
+		 	  columnWidth: 220,
+		 	  rowHeight: 200, 
+		 	  contentBinding: 'TwSprout.pubmedController.arrangedObjects',
+		 	  valueBinding: 'TwSprout.pubmedController.arrangedObjects',
+		 	  selectionBinding: 'TwSprout.pubmedController.selection', 
+		 	  exampleView: TwSprout.PubmedEntryView
+         	 
+	     	}),
 	    }),
 
 	    bottomView: SC.ToolbarView.design({

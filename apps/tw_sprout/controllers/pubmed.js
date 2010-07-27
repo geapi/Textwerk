@@ -12,6 +12,8 @@
 */
 TwSprout.pubmedController = SC.ArrayController.create(
 /** @scope TwSprout.pubmedController.prototype */ {
+	searching: NO,
+	noResults: NO,
 
   	resultcount: function() {
 	    var len = this.get('length'), ret ;
@@ -45,6 +47,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
    }.property('status').cacheable(),
 	searchPubmed: function(){
 		console.log('search was triggered with: '+this.searchTerm);
+		TwSprout.pubmedController.set('searching', YES);
 		//TwSprout.store.reset();
 		//TwSprout.pubmedController.set('content', null);
 		TwSprout.store.reset();
