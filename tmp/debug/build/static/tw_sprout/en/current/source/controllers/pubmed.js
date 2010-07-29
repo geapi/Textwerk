@@ -14,11 +14,22 @@ TwSprout.pubmedController = SC.ArrayController.create(
 /** @scope TwSprout.pubmedController.prototype */ {
 	searching: NO,
 	noResults: NO,
+	totalsCount: "",
+	
+	setNumberOfResults: function(response){
+		if (SC.ok(response)) {;
+	      this.set('totalsCount', "total results: "+ response.get('body').resultCount);
+		  console.log(response.get('body').resultCount);
+	    }
+	},
 
   	resultcount: function() {
 	    var len = this.get('length'), ret ;
 
 	    if (len && len > 0) {
+		  SC.Request.getUrl('getResultsCount?term='+this.get('searchTerm')).json()
+		            .notify(this, 'setNumberOfResults')
+		            .send(); 
 	      ret = len === 1 ? "1 result"  : "%@ results".fmt(len);
 	      ret = ret + " for search term: "+TwSprout.pubmedController.get('searchTerm');
 	    } else ret = "No results";

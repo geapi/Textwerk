@@ -7,3 +7,4 @@
 config :all, :required => :sproutcore
 
 proxy "/searchPubmed", :to => "localhost:3000"
+proxy "/getResultsCount", :to => "localhost:3000"
