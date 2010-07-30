@@ -14,7 +14,7 @@
 TwSprout = SC.Application.create(
   /** @scope TwSprout.prototype */ {
 
-  NAMESPACE: 'TwSprout',
+  NAMESPACE: 'TextWerk',
   VERSION: '0.1.0',
 
   // This is your application store.  You will use this store to access all

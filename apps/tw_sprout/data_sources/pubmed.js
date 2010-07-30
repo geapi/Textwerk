@@ -29,7 +29,7 @@ TwSprout.PubmedDataSource = SC.DataSource.extend(
 		var recordType = query.get('recordType'); 
 		var url = recordType.prototype.pubmedurl;
 		//alert("search term is: "+TwSprout.pubmedController.get('searchTerm'));
-	    SC.Request.getUrl(url+'?term='+TwSprout.pubmedController.get('searchTerm')).header({'Accept': 'application/json'}).json()
+	    SC.Request.getUrl(url+'?term='+TwSprout.pubmedController.get('searchTerm')+"&resultsPerPage="+TwSprout.pubmedController.get('resultsPerPage')+"&page="+TwSprout.pubmedController.get('currentPage')).header({'Accept': 'application/json'}).json()
 	      .notify(this, 'didFetchResults', store, query)
 	      .send();
 	    return YES;

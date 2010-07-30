@@ -15,10 +15,14 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	searching: NO,
 	noResults: NO,
 	totalsCount: "",
+	currentPage: 1,
+	page: 1,
+	resultsPerPage: 20,
+	
 	
 	setNumberOfResults: function(response){
 		if (SC.ok(response)) {;
-	      this.set('totalsCount', "total results: "+ response.get('body').resultCount);
+	      this.set('totalsCount', "current page: "+this.currentPage +" total results: "+ response.get('body').resultCount);
 		  console.log(response.get('body').resultCount);
 	    }
 	},
@@ -27,9 +31,11 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	    var len = this.get('length'), ret ;
 
 	    if (len && len > 0) {
+		if(this.currentPage == 1){
 		  SC.Request.getUrl('getResultsCount?term='+this.get('searchTerm')).json()
 		            .notify(this, 'setNumberOfResults')
 		            .send(); 
+		 }
 	      ret = len === 1 ? "1 result"  : "%@ results".fmt(len);
 	      ret = ret + " for search term: "+TwSprout.pubmedController.get('searchTerm');
 	    } else ret = "No results";
@@ -56,6 +62,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	   //console.log(this.get('content'));
    	   return this.get('content');
    }.property('status').cacheable(),
+
 	searchPubmed: function(){
 		console.log('search was triggered with: '+this.searchTerm);
 		TwSprout.pubmedController.set('searching', YES);
@@ -72,7 +79,21 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	
 	newSearch: function(evt){	 
 			//console.log("so far "+this.searchTerm);
-	}		
+	},
+	
+	nextPage: function(){
+		console.log("want to see NEXT page");
+		this.currentPage = this.currentPage+1;
+		this.searchPubmed();
+	},
+			
+	previousPage: function(){
+		console.log("want to see PREVIOUS page");
+		if(this.currentPage >= 1){
+			this.currentPage = this.currentPage-1;
+			this.searchPubmed();
+		}
+	},
 
 }) ;
 ; if ((typeof SC !== 'undefined') && SC && SC.scriptDidLoad) SC.scriptDidLoad('tw_sprout');

@@ -76,16 +76,31 @@ TwSprout.mainPage = SC.Page.design({
 
 	    bottomView: SC.ToolbarView.design({
 	      layout: { bottom: 0, left: 0, right: 0, height: 32 },
-		  childViews: 'summaryView totalsView'.w(),
+		  childViews: 'previousButton summaryView nextButton totalsView'.w(),
 	      anchorLocation: SC.ANCHOR_BOTTOM,
+		  
+		  previousButton: SC.ButtonView.design({
+	            layout: { centerY: 0, height: 24, left: 12, width: 100 },
+	            title:  "< previous",
+			    target: "TwSprout.pubmedController",
+			    action: "previousPage",
+				isEnabled: true
+	      }),
 	
 		  summaryView: SC.LabelView.design({
-		        layout: { centerY: 0, height: 18, left: 20, right: 20 },
+		        layout: { centerY: 0, height: 18, left: 200, right: 200 },
 		        textAlign: SC.ALIGN_CENTER,
 		        valueBinding: "TwSprout.pubmedController.resultcount"
 		  }),
+		  nextButton: SC.ButtonView.design({
+	            layout: { centerY: 0, height: 24, right: 12, width: 100 },
+	            title:  "next >",
+			    target: "TwSprout.pubmedController",
+			    action: "nextPage",
+			    isEnabled: true
+	      }),
 		  totalsView: SC.LabelView.design({
-		        layout: { centerY: 0, height: 18, left: 20, right: 20 },
+		        layout: { centerY: 0, height: 18, left: 400, right: 120 },
 		        textAlign: SC.ALIGN_RIGHT,
 		        valueBinding: "TwSprout.pubmedController.totalsCount"
 		  })
