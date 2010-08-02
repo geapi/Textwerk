@@ -15,7 +15,7 @@ TwSprout.mainPage = SC.Page.design({
 
 	    topView: SC.ToolbarView.design({
 	      layout: { top: 0, left: 0, right: 0, height: 36 }, 
-		  childViews: 'labelView loadingImage searchField searchButton'.w(),
+		  childViews: 'labelView searchedTerm loadingImage searchField searchButton'.w(),
 	      anchorLocation: SC.ANCHOR_TOP,
 	
 		 labelView: SC.LabelView.design({
@@ -24,6 +24,13 @@ TwSprout.mainPage = SC.Page.design({
 		        fontWeight: SC.BOLD_WEIGHT,
 		        value:   'PubMed TextWerk'
 		      }),
+		searchedTerm: SC.LabelView.design({
+			        layout: { centerY: 0, height: 18, left: 200, right: 200, width: 700},
+			        textAlign: SC.ALIGN_CENTER,
+			        valueBinding: 'TwSprout.pubmedController.searchTermOverview',
+					contentBinding: 'TwSprout.pubmedController.searchTermOverview'
+
+			  }),
 		 loadingImage: SC.ImageView.design({
 		    layout: { top: 8, height: 16,  right: 350, width: 16 },
 		    value: sc_static('images/loading'),
@@ -76,33 +83,45 @@ TwSprout.mainPage = SC.Page.design({
 
 	    bottomView: SC.ToolbarView.design({
 	      layout: { bottom: 0, left: 0, right: 0, height: 32 },
-		  childViews: 'previousButton summaryView nextButton totalsView'.w(),
+		  childViews: 'firstButton previousButton currentPageView nextButton lastButton'.w(),
 	      anchorLocation: SC.ANCHOR_BOTTOM,
 		  
-		  previousButton: SC.ButtonView.design({
+		  firstButton: SC.ButtonView.design({
 	            layout: { centerY: 0, height: 24, left: 12, width: 100 },
+	            title:  "| < first",
+			    target: "TwSprout.pubmedController",
+			    action: "firstPage",
+				isEnabled: true
+	      }),
+	
+		  previousButton: SC.ButtonView.design({
+	            layout: { centerY: 0, height: 24, left: 120, width: 100 },
 	            title:  "< previous",
 			    target: "TwSprout.pubmedController",
 			    action: "previousPage",
 				isEnabled: true
 	      }),
 	
-		  summaryView: SC.LabelView.design({
+		  currentPageView: SC.LabelView.design({
 		        layout: { centerY: 0, height: 18, left: 200, right: 200 },
 		        textAlign: SC.ALIGN_CENTER,
-		        valueBinding: "TwSprout.pubmedController.resultcount"
+		        valueBinding: "TwSprout.pubmedController.displayCurrentPage",
+		        contentBinding: "TwSprout.pubmedController.displayCurrentPage"
+		
 		  }),
 		  nextButton: SC.ButtonView.design({
-	            layout: { centerY: 0, height: 24, right: 12, width: 100 },
+	            layout: { centerY: 0, height: 24, right: 120, width: 100 },
 	            title:  "next >",
 			    target: "TwSprout.pubmedController",
 			    action: "nextPage",
 			    isEnabled: true
 	      }),
-		  totalsView: SC.LabelView.design({
-		        layout: { centerY: 0, height: 18, left: 400, right: 120 },
-		        textAlign: SC.ALIGN_RIGHT,
-		        valueBinding: "TwSprout.pubmedController.totalsCount"
+		  lastButton: SC.ButtonView.design({
+		        layout: { centerY: 0, height: 24, right: 12, width: 100 },
+	            title:  "last > |",
+			    target: "TwSprout.pubmedController",
+			    action: "lastPage",
+			    isEnabled: true
 		  })
 	    })
 	  })

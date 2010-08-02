@@ -18,20 +18,48 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	currentPage: 1,
 	page: 1,
 	resultsPerPage: 20,
+	totalPages: 0,
+	startIndex: 1,
+	endIndex: 20,
+	maxPageNumber: 1, 
+	previousSearchTerm :"",
 	
 	
 	setNumberOfResults: function(response){
 		if (SC.ok(response)) {;
-	      this.set('totalsCount', "current page: "+this.currentPage +" total results: "+ response.get('body').resultCount);
+	      this.set('totalsCount', response.get('body').resultCount);
 		  console.log(response.get('body').resultCount);
 	    }
 	},
+	searchTermOverview: function(){
+		ret = "";
+		var len = this.get('length'), ret ;
+		if (len && len > 0) {
+			ret = " search term " + this.get('searchTerm') + " yielded " + this.get('totalsCount') + " results";
+			}
+		return ret;
+		
+	}.property('totalsCount').cacheable(),
+	
+	displayCurrentPage: function(){
+		var len = this.get('length'), ret = "no results" ;
+		this.set('startIndex', (this.get('currentPage')-1)*this.get('resultsPerPage') + 1˝);
+    	this.set('endIndex', this.get('totalsCount') <= this.get('startIndex')+this.get('resultsPerPage') ? this.get('totalsCount') :  ((this.get('currentPage')-1)*this.get('resultsPerPage'))+this.get('resultsPerPage'));
+		this.set('totalPages', Math.ceil(this.get('totalsCount')/this.get('resultsPerPage')));
+		if (len && len > 0) {
+			whichResults = " showing results " + this.get('startIndex') + " to " + this.get('endIndex');
+			ret = "Page "+ this.get('currentPage') + " of " + this.get('totalPages') + whichResults;
+		}
+		return ret;
 
+	}.property('length'),
+
+// not needed anymore, nuke
   	resultcount: function() {
 	    var len = this.get('length'), ret ;
 
 	    if (len && len > 0) {
-		if(this.currentPage == 1){
+		if(this.get('currentPage') == 1){
 		  SC.Request.getUrl('getResultsCount?term='+this.get('searchTerm')).json()
 		            .notify(this, 'setNumberOfResults')
 		            .send(); 
@@ -64,7 +92,14 @@ TwSprout.pubmedController = SC.ArrayController.create(
    }.property('status').cacheable(),
 
 	searchPubmed: function(){
-		console.log('search was triggered with: '+this.searchTerm);
+		if(this.get('previousSearchTerm') != this.get('searchTerm')){
+			this.set('previousSearchTerm', this.get('searchTerm'));
+			this.set('currentPage',1);
+			SC.Request.getUrl('getResultsCount?term='+this.get('searchTerm')).json()
+			            .notify(this, 'setNumberOfResults')
+			            .send();
+		}
+		console.log('search was triggered with: '+this.get('searchTerm'));
 		TwSprout.pubmedController.set('searching', YES);
 		//TwSprout.store.reset();
 		//TwSprout.pubmedController.set('content', null);
@@ -83,16 +118,36 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	
 	nextPage: function(){
 		console.log("want to see NEXT page");
-		this.currentPage = this.currentPage+1;
+		this.set('currentPage', this.get('currentPage')+1);
+		console.log(this.currentPage);
 		this.searchPubmed();
 	},
 			
 	previousPage: function(){
 		console.log("want to see PREVIOUS page");
-		if(this.currentPage >= 1){
-			this.currentPage = this.currentPage-1;
+		if(this.get('currentPage') >1){
+			this.set('currentPage', this.get('currentPage')-1);
+			console.log(this.get('currentPage'));
 			this.searchPubmed();
 		}
 	},
+	
+	firstPage: function(){
+		console.log("want the FIRST page");
+		if(this.get('currentPage') >1){
+			this.set('currentPage', 1);
+			console.log(this.get('currentPage'));
+			this.searchPubmed();
+		}
+	},
+	
+	lastPage: function(){
+	   console.log("want the LAST page");
+		if(this.get('currentPage') < this.get('totalPages')){
+			this.set('currentPage', this.get('totalPages'));
+			console.log(this.get('currentPage'));
+			this.searchPubmed();
+		}	
+	}
 
 }) ;
