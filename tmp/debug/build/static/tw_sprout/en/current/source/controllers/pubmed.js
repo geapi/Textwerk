@@ -18,11 +18,13 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	currentPage: 1,
 	page: 1,
 	resultsPerPage: 20,
-	totalPages: 0,
+	totalPages: 20,
 	startIndex: 1,
 	endIndex: 20,
 	maxPageNumber: 1, 
 	previousSearchTerm :"",
+	showLastButton: YES,
+	showPreviousButton: NO,
 	
 	
 	setNumberOfResults: function(response){
@@ -92,6 +94,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
    }.property('status').cacheable(),
 
 	searchPubmed: function(){
+		this.enablePreviousButton();
 		if(this.get('previousSearchTerm') != this.get('searchTerm')){
 			this.set('previousSearchTerm', this.get('searchTerm'));
 			this.set('currentPage',1);
@@ -121,6 +124,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
 		this.set('currentPage', this.get('currentPage')+1);
 		console.log(this.currentPage);
 		this.searchPubmed();
+		this.enableNextButton();
 	},
 			
 	previousPage: function(){
@@ -147,7 +151,24 @@ TwSprout.pubmedController = SC.ArrayController.create(
 			this.set('currentPage', this.get('totalPages'));
 			console.log(this.get('currentPage'));
 			this.searchPubmed();
-		}	
+		}
+		this.enableNextButton();	
+	},
+	enablePreviousButton: function(){
+		if(this.get('currentPage') > 1 ){
+			this.set('showPreviousButton', YES);
+		}
+		else{
+			this.set('showPreviousButton', NO);
+		}
+	},
+	enableNextButton: function(){
+		if(this.get('currentPage') < this.get('totalPages') ){
+			this.set('showLastButton', YES);
+		}
+		else{
+			this.set('showLastButton', NO);
+		}
 	}
 
 }) ;

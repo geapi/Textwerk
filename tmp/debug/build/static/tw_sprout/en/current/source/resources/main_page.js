@@ -91,7 +91,7 @@ TwSprout.mainPage = SC.Page.design({
 	            title:  "| < first",
 			    target: "TwSprout.pubmedController",
 			    action: "firstPage",
-				isEnabled: true
+				isVisibleBinding: 'TwSprout.pubmedController.showPreviousButton'
 	      }),
 	
 		  previousButton: SC.ButtonView.design({
@@ -99,7 +99,9 @@ TwSprout.mainPage = SC.Page.design({
 	            title:  "< previous",
 			    target: "TwSprout.pubmedController",
 			    action: "previousPage",
-				isEnabled: true
+				isVisibleBinding: 'TwSprout.pubmedController.showPreviousButton'
+				//valueBinding: "TwSprout.pubmedController.currentPage",
+				//contentBinding: "TwSprout.pubmedController.currentPage"
 	      }),
 	
 		  currentPageView: SC.LabelView.design({
@@ -114,14 +116,14 @@ TwSprout.mainPage = SC.Page.design({
 	            title:  "next >",
 			    target: "TwSprout.pubmedController",
 			    action: "nextPage",
-			    isEnabled: true
+			    isVisibleBinding: 'TwSprout.pubmedController.showLastButton'
 	      }),
 		  lastButton: SC.ButtonView.design({
 		        layout: { centerY: 0, height: 24, right: 12, width: 100 },
 	            title:  "last > |",
 			    target: "TwSprout.pubmedController",
 			    action: "lastPage",
-			    isEnabled: true
+			    isVisibleBinding: 'TwSprout.pubmedController.showLastButton'
 		  })
 	    })
 	  })
