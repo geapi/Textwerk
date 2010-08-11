@@ -28,20 +28,19 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	
 	
 	setNumberOfResults: function(response){
-		if (SC.ok(response)) {;
+		if (SC.ok(response)) {
 	      this.set('totalsCount', response.get('body').resultCount);
 		  console.log(response.get('body').resultCount);
 	    }
 	},
 	searchTermOverview: function(){
-		ret = "";
 		var len = this.get('length'), ret ;
 		if (len && len > 0) {
 			ret = " search term " + this.get('searchTerm') + " yielded " + this.get('totalsCount') + " results";
 			}
 		return ret;
 		
-	}.property('totalsCount').cacheable(),
+	}.property('length').cacheable(),
 	
 	displayCurrentPage: function(){
 		var len = this.get('length'), ret = "no results" ;
@@ -49,7 +48,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
     	this.set('endIndex', this.get('totalsCount') <= this.get('startIndex')+this.get('resultsPerPage') ? this.get('totalsCount') :  ((this.get('currentPage')-1)*this.get('resultsPerPage'))+this.get('resultsPerPage'));
 		this.set('totalPages', Math.ceil(this.get('totalsCount')/this.get('resultsPerPage')));
 		if (len && len > 0) {
-			whichResults = " showing results " + this.get('startIndex') + " to " + this.get('endIndex');
+			var whichResults = " showing results " + this.get('startIndex') + " to " + this.get('endIndex');
 			ret = "Page "+ this.get('currentPage') + " of " + this.get('totalPages') + whichResults;
 		}
 		return ret;
@@ -95,6 +94,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
 
 	searchPubmed: function(){
 		this.enablePreviousButton();
+		this.enableNextButton();
 		if(this.get('previousSearchTerm') != this.get('searchTerm')){
 			this.set('previousSearchTerm', this.get('searchTerm'));
 			this.set('currentPage',1);
@@ -124,7 +124,6 @@ TwSprout.pubmedController = SC.ArrayController.create(
 		this.set('currentPage', this.get('currentPage')+1);
 		console.log(this.currentPage);
 		this.searchPubmed();
-		this.enableNextButton();
 	},
 			
 	previousPage: function(){
@@ -151,8 +150,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
 			this.set('currentPage', this.get('totalPages'));
 			console.log(this.get('currentPage'));
 			this.searchPubmed();
-		}
-		this.enableNextButton();	
+		}	
 	},
 	enablePreviousButton: function(){
 		if(this.get('currentPage') > 1 ){
@@ -163,11 +161,11 @@ TwSprout.pubmedController = SC.ArrayController.create(
 		}
 	},
 	enableNextButton: function(){
-		if(this.get('currentPage') < this.get('totalPages') ){
-			this.set('showLastButton', YES);
+		if(this.get('currentPage') === this.get('totalPages') ){
+			this.set('showLastButton', NO);
 		}
 		else{
-			this.set('showLastButton', NO);
+			this.set('showLastButton', YES);
 		}
 	}
 

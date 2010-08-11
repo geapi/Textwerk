@@ -18,6 +18,8 @@ TwSprout.main = function main() {
   // on screen.  If you app gets any level of complexity, you will probably 
   // create multiple pages and panes.  
   TwSprout.getPath('mainPage.mainPane').append() ; 
+  //TwSprout.makeFirstResponder(TwSprout.LAW_CONTENT);
+  TwSprout.makeFirstResponder(TwSprout.PUBMED_CONTENT);
   //TwSprout.server.preload(TwSprout.Pubmed.FIXTURES);
 
   // Step 2. Set the content property on your primary controller.
