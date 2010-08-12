@@ -15,9 +15,9 @@ TwSprout.Law = SC.Record.extend(
 /** @scope TwSprout.Law.prototype */ {
 
   	date: SC.Record.attr(String),
-	authors: SC.Record.attr(String),
-	title: SC.Record.attr(String),
-	pmid: SC.Record.attr(String),
-	pubmedurl: "/searchPubmed"
+	doc_type: SC.Record.attr(String),
+	description: SC.Record.attr(String),
+	position: SC.Record.attr(String),
+	name: SC.Record.attr(String)
 
 }) ;

@@ -18,13 +18,17 @@ TwSprout.main = function main() {
   // on screen.  If you app gets any level of complexity, you will probably 
   // create multiple pages and panes.  
   TwSprout.getPath('mainPage.mainPane').append() ; 
-  //TwSprout.makeFirstResponder(TwSprout.LAW_CONTENT);
-  TwSprout.makeFirstResponder(TwSprout.PUBMED_CONTENT);
+  TwSprout.makeFirstResponder(TwSprout.LAW_CONTENT);
+  //TwSprout.makeFirstResponder(TwSprout.PUBMED_CONTENT);
   //TwSprout.server.preload(TwSprout.Pubmed.FIXTURES);
+  //TwSprout.server.preload(TwSprout.Law.FIXTURES);  // doesn't work, not need to load fixtures, turn them on in the core.js by creating the store from fixtures
 
   // Step 2. Set the content property on your primary controller.
   // This will make your app come alive!
-
+	var query = SC.Query.local(TwSprout.Law, { orderBy: 'guid,name' });
+	var results = TwSprout.store.find(query);
+	TwSprout.lawController.set('content', results);
+	
 	//var query = SC.Query.remote(TwSprout.Pubmed, { orderBy: 'guid,title' });
 	//var results =  TwSprout.store.find(TwSprout.RESULTS_QUERY)
 	//var results = TwSprout.store.find(query);
