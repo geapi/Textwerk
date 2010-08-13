@@ -58,6 +58,11 @@ div.custom-list-item-view span.value {
   margin-left: 5px;
   font-style: italic;
 }
+div.custom-list-item-view span.fulltext {
+  margin-left: 5px;
+  font-style: italic;
+ font-weight: bold;
+}
 
 .toolbar .sc-radio-button {
   margin: 0px 10px 0px 0px;

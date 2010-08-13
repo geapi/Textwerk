@@ -6,7 +6,7 @@
 
 sc_require('models/law');
 
-TwSprout.Law.FIXTURES = [
+TwSprout.Law.F = [
 
   // TODO: Add your data fixtures here.
   // All fixture records must have a unique primary key (default 'guid').  See 

@@ -10,12 +10,15 @@
   
   @extends SC.Object
 */
+	sc_require('ext/bindings');
 
 TwSprout = SC.Application.create(
   /** @scope TwSprout.prototype */ {
 
   NAMESPACE: 'TextWerk',
   VERSION: '0.1.0',
+
+
 
   // This is your application store.  You will use this store to access all
   // of your model data.  You can also set a data source on this store to
