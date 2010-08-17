@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout.PubmedEntryView
+// Project:   TextWerk.PubmedEntryView
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 /** @class
 
@@ -10,9 +10,9 @@ Custom view that renders the overview of a pubmed entry
 
 @extends SC.View
 */
-TwSprout.PubmedEntryView = SC.View.extend(SC.ContentDisplay, {  
+TextWerk.PubmedEntryView = SC.View.extend(SC.ContentDisplay, {  
 	
-	contentBinding: 'TwSprout.pubmedController.results',
+	contentBinding: 'TextWerk.pubmedController.results',
 
 	classNames: ['custom-list-item-view'],
 

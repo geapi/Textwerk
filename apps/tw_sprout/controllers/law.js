@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout.law
+// Project:   TextWerk.law
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 /** @class
 
@@ -10,12 +10,13 @@
 
   @extends SC.Object
 */
-TwSprout.lawController = SC.ArrayController.create(
-/** @scope TwSprout.law.prototype */
+TextWerk.lawController = SC.ArrayController.create(
+/** @scope TextWerk.law.prototype */
  {
-    //contentBinding: 'TwSprout.lawController.selection',
+    //contentBinding: 'TextWerk.lawController.selection',
     //contentBindingDefault: SC.Binding.firstObject(),
     searching: NO,
+	selectedObject: null,
 
 
     hightlight: function() {
@@ -28,11 +29,13 @@ TwSprout.lawController = SC.ArrayController.create(
         if (this.getPath('selection.firstObject')) {
             //console.log('just got selected:  ' + this.getPath('selection.firstObject').get('guid'));
             //this.get('id');
-            if (TwSprout.LAW_CONTENT_SECONDLEVEL.isFirstResponder) {
-                TwSprout.makeFirstResponder(TwSprout.LAW_CONTENT_TOPLEVEL);
+ 			this.set('selectedObject',this.getPath('selection.firstObject') );
+			//console.log("selected object: "+ this.get('selectedObject'));
+            if (TextWerk.LAW_CONTENT_SECONDLEVEL.isFirstResponder) {
+                //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
             } else
             {
-                TwSprout.makeFirstResponder(TwSprout.LAW_CONTENT_SECONDLEVEL);
+                //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
             }
         }
     }.observes('selection'),
@@ -42,6 +45,8 @@ TwSprout.lawController = SC.ArrayController.create(
         //console.log(this.get('content'));
         return this.get('content');
     }.property('status').cacheable(),
+
+	
 
 
 

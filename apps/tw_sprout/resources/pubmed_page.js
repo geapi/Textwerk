@@ -2,9 +2,9 @@
 // Project:   Sproutweets - statusPage
 // Copyright: ©2010 Apple, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
-TwSprout.pubmedPage = SC.Page.design({
+TextWerk.pubmedPage = SC.Page.design({
 	pubmedView: SC.View.design({
 	childViews: 'middleView topView bottomView'.w(),
 
@@ -28,30 +28,30 @@ TwSprout.pubmedPage = SC.Page.design({
 		searchedTerm: SC.LabelView.design({
 			        layout: { centerY: 0, height: 18, left: 200, right: 200, width: 700},
 			        textAlign: SC.ALIGN_CENTER,
-			        valueBinding: 'TwSprout.pubmedController.searchTermOverview',
-					contentBinding: 'TwSprout.pubmedController.searchTermOverview'
+			        valueBinding: 'TextWerk.pubmedController.searchTermOverview',
+					contentBinding: 'TextWerk.pubmedController.searchTermOverview'
 
 			  }),
 		 loadingImage: SC.ImageView.design({
 		    layout: { top: 14, height: 16,  right: 350, width: 16 },
 		    value: sc_static('images/loading'),
 		    useImageCache: NO,
-		    isVisibleBinding: 'TwSprout.pubmedController.searching'
+		    isVisibleBinding: 'TextWerk.pubmedController.searching'
 		  }),
 		 searchField: SC.TextFieldView.design({
 		        layout: { centerY: 0, height: 24, right: 120, width: 200 },
 		        controlSize: SC.LARGE_CONTROL_SIZE,
 		        fontWeight: SC.BOLD_WEIGHT,
 		        hint:   'type your search here',
-				valueBinding: 'TwSprout.pubmedController.searchTerm',
-				target: "TwSprout.pubmedController",
+				valueBinding: 'TextWerk.pubmedController.searchTerm',
+				target: "TextWerk.pubmedController",
 				action: "newSearch",
 				keyDown: function(evt) {
  					sc_super(); // necessary to guarantee regular handling of keyDown events, 
 								// want to avoid that this overwrite messes everything up
 					if (evt.charCode === 13) {
 						// trigger the search after we've seen an "enter", seems to have hickups in FF
-							TwSprout.pubmedController.searchPubmed(); 
+							TextWerk.pubmedController.searchPubmed(); 
 					        return YES;
 					      } else {
 					        return NO;
@@ -62,7 +62,7 @@ TwSprout.pubmedPage = SC.Page.design({
 		 searchButton: SC.ButtonView.design({
 	        layout: { centerY: 0, height: 24, right: 12, width: 100 },
 	        title:  "Search",
-			target: "TwSprout.pubmedController",
+			target: "TextWerk.pubmedController",
 			action: "searchPubmed"
 	      })
 	    }),
@@ -74,10 +74,10 @@ TwSprout.pubmedPage = SC.Page.design({
 	     	contentView: SC.GridView.design({
 		 	  columnWidth: 220,
 		 	  rowHeight: 200, 
-		 	  contentBinding: 'TwSprout.pubmedController.arrangedObjects',
-		 	  valueBinding: 'TwSprout.pubmedController.arrangedObjects',
-		 	  selectionBinding: 'TwSprout.pubmedController.selection', 
-		 	  exampleView: TwSprout.PubmedEntryView
+		 	  contentBinding: 'TextWerk.pubmedController.arrangedObjects',
+		 	  valueBinding: 'TextWerk.pubmedController.arrangedObjects',
+		 	  selectionBinding: 'TextWerk.pubmedController.selection', 
+		 	  exampleView: TextWerk.PubmedEntryView
 
 	     	})
 	    }),
@@ -90,41 +90,41 @@ TwSprout.pubmedPage = SC.Page.design({
 		  firstButton: SC.ButtonView.design({
 	            layout: { centerY: 0, height: 24, left: 12, width: 100 },
 	            title:  "| < first",
-			    target: "TwSprout.pubmedController",
+			    target: "TextWerk.pubmedController",
 			    action: "firstPage",
-				isVisibleBinding: 'TwSprout.pubmedController.showPreviousButton'
+				isVisibleBinding: 'TextWerk.pubmedController.showPreviousButton'
 	      }),
 
 		  previousButton: SC.ButtonView.design({
 	            layout: { centerY: 0, height: 24, left: 120, width: 100 },
 	            title:  "< previous",
-			    target: "TwSprout.pubmedController",
+			    target: "TextWerk.pubmedController",
 			    action: "previousPage",
-				isVisibleBinding: 'TwSprout.pubmedController.showPreviousButton'
-				//valueBinding: "TwSprout.pubmedController.currentPage",
-				//contentBinding: "TwSprout.pubmedController.currentPage"
+				isVisibleBinding: 'TextWerk.pubmedController.showPreviousButton'
+				//valueBinding: "TextWerk.pubmedController.currentPage",
+				//contentBinding: "TextWerk.pubmedController.currentPage"
 	      }),
 
 		  currentPageView: SC.LabelView.design({
 		        layout: { centerY: 0, height: 18, left: 200, right: 200 },
 		        textAlign: SC.ALIGN_CENTER,
-		        valueBinding: "TwSprout.pubmedController.displayCurrentPage",
-		        contentBinding: "TwSprout.pubmedController.displayCurrentPage"
+		        valueBinding: "TextWerk.pubmedController.displayCurrentPage",
+		        contentBinding: "TextWerk.pubmedController.displayCurrentPage"
 
 		  }),
 		  nextButton: SC.ButtonView.design({
 	            layout: { centerY: 0, height: 24, right: 120, width: 100 },
 	            title:  "next >",
-			    target: "TwSprout.pubmedController",
+			    target: "TextWerk.pubmedController",
 			    action: "nextPage",
-			    isVisibleBinding: 'TwSprout.pubmedController.showLastButton'
+			    isVisibleBinding: 'TextWerk.pubmedController.showLastButton'
 	      }),
 		  lastButton: SC.ButtonView.design({
 		        layout: { centerY: 0, height: 24, right: 12, width: 100 },
 	            title:  "last > |",
-			    target: "TwSprout.pubmedController",
+			    target: "TextWerk.pubmedController",
 			    action: "lastPage",
-			    isVisibleBinding: 'TwSprout.pubmedController.showLastButton'
+			    isVisibleBinding: 'TextWerk.pubmedController.showLastButton'
 		  })
 	    })
 	  })

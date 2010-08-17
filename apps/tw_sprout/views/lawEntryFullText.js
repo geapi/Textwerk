@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout
+// Project:   TextWerk
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 /** @class
 
@@ -10,9 +10,9 @@ Custom view that renders the overview of a pubmed entry
 
 @extends SC.View
 */
-TwSprout.LawEntryViewFullText = SC.View.extend(SC.ContentDisplay, {  
+TextWerk.LawEntryViewFullText = SC.View.extend(SC.ContentDisplay, {  
 	
-	contentBinding: 'TwSprout.lawController.results',
+	contentBinding: 'TextWerk.lawController.results',
 
 	classNames: ['custom-list-item-view'],
 

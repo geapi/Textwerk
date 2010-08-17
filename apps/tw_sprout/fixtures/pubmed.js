@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   TwSprout.Pubmed Fixtures
+// Project:   TextWerk.Pubmed Fixtures
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 sc_require('models/pubmed');
 
-TwSprout.Pubmed.FIXTURES = [
+TextWerk.Pubmed.FIXTURES = [
   
   	{guid: 1, 
 	authors: "Selvendiran K, Tong L, Bratasz A, Kuppusamy ML, Ahmed S, Ravi Y, Trigg NJ, Rivera BK, Kálai T, Hideg K, Kuppusamy P.", 

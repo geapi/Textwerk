@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   TwSprout.PubmedEntryView Unit Test
+// Project:   TextWerk.PubmedEntryView Unit Test
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout module test ok equals same stop start */
+/*globals TextWerk module test ok equals same stop start */
 
-module("TwSprout.PubmedEntryView");
+module("TextWerk.PubmedEntryView");
 
-// TODO: Replace with real unit test for TwSprout.PubmedEntryView
+// TODO: Replace with real unit test for TextWerk.PubmedEntryView
 test("test description", function() {
   var expected = "test";
   var result   = "test";

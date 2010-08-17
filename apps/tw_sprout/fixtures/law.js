@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   TwSprout.Law Fixtures
+// Project:   TextWerk.Law Fixtures
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 sc_require('models/law');
 
-TwSprout.Law.F = [
+TextWerk.Law.F = [
 
   // TODO: Add your data fixtures here.
   // All fixture records must have a unique primary key (default 'guid').  See 

@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout.PUBMED_CONTENT
+// Project:   TextWerk.PUBMED_CONTENT
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout*/
+/*globals TextWerk*/
 
 /** @class
 
@@ -10,8 +10,8 @@
 
   @extends SC.Responder
 */
-TwSprout.PUBMED_CONTENT = SC.Responder.create(
-/** @scope TwSprout.PUBMED_CONTENT.prototype */ {
+TextWerk.PUBMED_CONTENT = SC.Responder.create(
+/** @scope TextWerk.PUBMED_CONTENT.prototype */ {
   /**
     The next state to check if this state does not implement the action.
   */
@@ -21,10 +21,10 @@ TwSprout.PUBMED_CONTENT = SC.Responder.create(
   // EVENTS
   //
   didBecomeFirstResponder: function() {
-    TwSprout.setPath('mainPage.mainPane.contentView.nowShowing', 'TwSprout.pubmedPage.pubmedView');
+    TextWerk.setPath('mainPage.mainPane.contentView.nowShowing', 'TextWerk.pubmedPage.pubmedView');
   },
   
   willLoseFirstResponder: function() {
-    TwSprout.setPath('mainPage.mainPane.contentView.nowShowing', '');
+    TextWerk.setPath('mainPage.mainPane.contentView.nowShowing', '');
   }
 }) ;

@@ -1,10 +1,10 @@
 // ==========================================================================
-// Project:   TwSprout.Pubmed Unit Test
+// Project:   TextWerk.Pubmed Unit Test
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout module test ok equals same stop start */
+/*globals TextWerk module test ok equals same stop start */
 
-module("TwSprout.Pubmed");
+module("TextWerk.Pubmed");
 
 // TODO: Replace with real unit test for Pubmed
 test("test description", function() {

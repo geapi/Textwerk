@@ -1,10 +1,10 @@
 // ==========================================================================
-// Project:   TwSprout - topView
+// Project:   TextWerk - topView
 // Copyright: ©2010 Apple, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
-TwSprout.topView = SC.ToolbarView.design({
+TextWerk.topView = SC.ToolbarView.design({
     layout: {
         top: 0,
         left: 0,
@@ -47,8 +47,8 @@ TwSprout.topView = SC.ToolbarView.design({
             width: 700
         },
         textAlign: SC.ALIGN_CENTER,
-        valueBinding: 'TwSprout.lawController.searchTermOverviewL',
-        contentBinding: 'TwSprout.lawController.searchTermOverviewL'
+        valueBinding: 'TextWerk.lawController.searchTermOverviewL',
+        contentBinding: 'TextWerk.lawController.searchTermOverviewL'
 
     }),
     loadingImage: SC.ImageView.design({
@@ -60,7 +60,7 @@ TwSprout.topView = SC.ToolbarView.design({
         },
         value: sc_static('images/loading'),
         useImageCache: NO,
-        isVisibleBinding: 'TwSprout.lawController.searching'
+        isVisibleBinding: 'TextWerk.lawController.searching'
     }),
     searchField: SC.TextFieldView.design({
         layout: {
@@ -72,15 +72,15 @@ TwSprout.topView = SC.ToolbarView.design({
         controlSize: SC.LARGE_CONTROL_SIZE,
         fontWeight: SC.BOLD_WEIGHT,
         hint: 'type your search here',
-        valueBinding: 'TwSprout.lawController.searchTermLaw',
-        target: "TwSprout.lawController",
+        valueBinding: 'TextWerk.lawController.searchTermLaw',
+        target: "TextWerk.lawController",
         //action: "newSearch",
         keyDown: function(evt) {
             sc_super(); // necessary to guarantee regular handling of keyDown events, 
             // want to avoid that this overwrite messes everything up
             if (evt.charCode === 13) {
                 // trigger the search after we've seen an "enter", seems to have hickups in FF
-                TwSprout.lawController.searchPubmed();
+                TextWerk.lawController.searchPubmed();
                 return YES;
             } else {
                 return NO;
@@ -96,7 +96,7 @@ TwSprout.topView = SC.ToolbarView.design({
             width: 100
         },
         title: "Search",
-        target: "TwSprout.lawController",
+        target: "TextWerk.lawController",
         action: "searchPubmed"
     })
 });

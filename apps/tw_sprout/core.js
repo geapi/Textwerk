@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout
+// Project:   TextWerk
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 /** @namespace
 
@@ -12,8 +12,8 @@
 */
 	sc_require('ext/bindings');
 
-TwSprout = SC.Application.create(
-  /** @scope TwSprout.prototype */ {
+TextWerk = SC.Application.create(
+  /** @scope TextWerk.prototype */ {
 
   NAMESPACE: 'TextWerk',
   VERSION: '0.1.0',
@@ -30,8 +30,8 @@ TwSprout = SC.Application.create(
 
 	//store: SC.Store.create({ 
   	//	commitRecordsAutomatically: YES
-	//	}).from('TwSprout.PubmedDataSource')
-		//}).from('TwSprout.LawDataSource')
+	//	}).from('TextWerk.PubmedDataSource')
+		//}).from('TextWerk.LawDataSource')
   
   // TODO: Add global constants or singleton objects needed by your app here.
 

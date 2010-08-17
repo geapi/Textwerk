@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout.PubmedDataSource
+// Project:   TextWerk.PubmedDataSource
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 /** @class
 
@@ -11,12 +11,12 @@
   @extends SC.DataSource
 */
 sc_require('models/pubmed');
-TwSprout.RESULTS_QUERY = SC.Query.remote(TwSprout.Pubmed, {
+TextWerk.RESULTS_QUERY = SC.Query.remote(TextWerk.Pubmed, {
   orderBy: 'guid,title'
 });
 
-TwSprout.PubmedDataSource = SC.DataSource.extend(
-/** @scope TwSprout.PubmedDataSource.prototype */ {
+TextWerk.PubmedDataSource = SC.DataSource.extend(
+/** @scope TextWerk.PubmedDataSource.prototype */ {
 
   // ..........................................................
   // QUERY SUPPORT
@@ -24,12 +24,12 @@ TwSprout.PubmedDataSource = SC.DataSource.extend(
 
   fetch: function(store, query, terms) {
 	
-     if (query === TwSprout.RESULTS_QUERY) {
+     if (query === TextWerk.RESULTS_QUERY) {
 		console.log('got a query');
 		var recordType = query.get('recordType'); 
 		var url = recordType.prototype.pubmedurl;
-		//alert("search term is: "+TwSprout.pubmedController.get('searchTerm'));
-	    SC.Request.getUrl(url+'?term='+TwSprout.pubmedController.get('searchTerm')+"&resultsPerPage="+TwSprout.pubmedController.get('resultsPerPage')+"&page="+TwSprout.pubmedController.get('currentPage')).header({'Accept': 'application/json'}).json()
+		//alert("search term is: "+TextWerk.pubmedController.get('searchTerm'));
+	    SC.Request.getUrl(url+'?term='+TextWerk.pubmedController.get('searchTerm')+"&resultsPerPage="+TextWerk.pubmedController.get('resultsPerPage')+"&page="+TextWerk.pubmedController.get('currentPage')).header({'Accept': 'application/json'}).json()
 	      .notify(this, 'didFetchResults', store, query)
 	      .send();
 	    return YES;
@@ -39,12 +39,12 @@ TwSprout.PubmedDataSource = SC.DataSource.extend(
   	},
 
 	didFetchResults: function(response, store, query) {
-		TwSprout.pubmedController.set('searching', NO);
+		TextWerk.pubmedController.set('searching', NO);
 		  if (SC.ok(response)) {
 			//alert("trying to give out results "+ response.get('body').content + " who's the store: "+store+ "record type: "+query.get('recordType'))
 		     var storeKeys = store.loadRecords(query.get('recordType'), response.get('body').content);
 		     if(response.get('body').content.length === 0){
-				TwSprout.pubmedController.set('noResults', YES);
+				TextWerk.pubmedController.set('noResults', YES);
 			 }
 
 		store.loadQueryResults(query, storeKeys);
@@ -58,7 +58,7 @@ TwSprout.PubmedDataSource = SC.DataSource.extend(
   // 
   
   retrieveRecord: function(store, storeKey) {
-  	if (SC.kindOf(store.recordTypeFor(storeKey), TwSprout.Pubmed)) {
+  	if (SC.kindOf(store.recordTypeFor(storeKey), TextWerk.Pubmed)) {
     
     var url = store.idFor(storeKey);
     SC.Request.getUrl(url).header({

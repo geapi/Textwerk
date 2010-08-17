@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   TwSprout.Law All Fixtures
+// Project:   TextWerk.Law All Fixtures
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 sc_require('models/law');
 
-TwSprout.Law.FIXTURES = [
+TextWerk.Law.FIXTURES = [
 {
     "description": " Brief for the Lawyers' Committee for Civil Rights Under Law as Amicus Curiae ",
     "date": "Jun. 1976",

@@ -1,10 +1,10 @@
 // ==========================================================================
-// Project:   TwSprout.Law Unit Test
+// Project:   TextWerk.Law Unit Test
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout module test ok equals same stop start */
+/*globals TextWerk module test ok equals same stop start */
 
-module("TwSprout.Law");
+module("TextWerk.Law");
 
 // TODO: Replace with real unit test for Law
 test("test description", function() {

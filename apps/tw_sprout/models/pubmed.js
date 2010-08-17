@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout.Pubmed
+// Project:   TextWerk.Pubmed
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 /** @class
 
@@ -11,8 +11,8 @@
 @extends SC.Record
 @version 0.1
 */
-TwSprout.Pubmed = SC.Record.extend(
-/** @scope TwSprout.Pubmed.prototype */ {
+TextWerk.Pubmed = SC.Record.extend(
+/** @scope TextWerk.Pubmed.prototype */ {
 	date: SC.Record.attr(String),
 	authors: SC.Record.attr(String),
 	title: SC.Record.attr(String),

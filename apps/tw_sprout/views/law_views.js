@@ -1,12 +1,13 @@
 // ==========================================================================
-// Project:   Sproutweets - statusPage
-// Copyright: ©2010 Apple, Inc.
+// Project:   TextWerk - views
+// Copyright: ©2010 
 // ==========================================================================
-/*globals TwSprout */
-sc_require('views/lawEntryTopLevel');
-sc_require('views/lawEntrySecondLevel');
+/*globals TextWerk */
+sc_require('views/lawEntryView');
+sc_require('ext/delegates');
 
-TwSprout.lawViews = SC.Page.design({
+
+TextWerk.lawViews = SC.Page.design({
 	lawTopLevelView: SC.ScrollView.design({
 	      hasHorizontalScroller: NO,
 	      layout: { top: 0, bottom: 0, left: 0, right: 0 },
@@ -14,25 +15,12 @@ TwSprout.lawViews = SC.Page.design({
 	     	contentView: SC.GridView.design({
 		 	  columnWidth: 150,
 		 	  rowHeight: 20, 
-		 	  contentBinding: 'TwSprout.lawController.arrangedObjects',
-		 	  selectionBinding: 'TwSprout.lawController.selection', 
+		 	  contentBinding: 'TextWerk.lawController.arrangedObjects',
+		 	  selectionBinding: 'TextWerk.lawController.selection', 
+			  delegate: TextWerk.rowDelegate,
 			  //selectionBindingDefault: 'SC.Binding.firstObject()',
-		 	  exampleView: TwSprout.LawEntryViewTopLevel
+		 	  exampleView: TextWerk.LawEntryView
 
-	     	})
-	  }),
-	lawSecondLevelView: SC.ScrollView.design({
-	      hasHorizontalScroller: NO,
-	      layout: { top: 0, bottom: 0, left: 0, right: 0 },
-	      backgroundColor: 'white',
-	     	contentView: SC.GridView.design({
-		 	  columnWidth: 250,
-		 	  rowHeight: 200, 
-		 	  contentBinding: 'TwSprout.lawController.arrangedObjects',
-		 	  valueBinding: 'TwSprout.lawController.arrangedObjects',
-		 	  selectionBinding: 'TwSprout.lawController.selection', 
-		 	  exampleView: TwSprout.LawEntryViewSecondLevel
-    
 	     	})
 	  }),
 	lawFullTextView: SC.ScrollView.design({
@@ -40,10 +28,10 @@ TwSprout.lawViews = SC.Page.design({
 	      layout: { top: 0, bottom: 0, left: 0, right: 0 },
 	      backgroundColor: 'white',
 	     	contentView: SC.View.design({
-		 	  contentBinding: 'TwSprout.lawController.selectedObject',
-		 	  valueBinding: 'TwSprout.lawController.selectedObject',
-		 	  //selectionBinding: 'TwSprout.lawController.selection', 
-		 	  exampleView: TwSprout.LawEntryViewFullText
+		 	  contentBinding: 'TextWerk.lawController.selectedObject',
+		 	  valueBinding: 'TextWerk.lawController.selectedObject',
+		 	  //selectionBinding: 'TextWerk.lawController.selection', 
+		 	  exampleView: TextWerk.LawEntryViewFullText
     
 	     	})
 	  })

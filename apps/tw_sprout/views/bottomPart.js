@@ -1,9 +1,9 @@
 // ==========================================================================
-// Project:   TwSprout - bottomView
+// Project:   TextWerk - bottomView
 // Copyright: ©2010 Apple, Inc.
 // ==========================================================================
-/*globals TwSprout */
-TwSprout.bottomView =  SC.ToolbarView.design({
+/*globals TextWerk */
+TextWerk.bottomView =  SC.ToolbarView.design({
   layout: { bottom: 0, left: 0, right: 0, height: 32 },
   //childViews: 'firstButton previousButton currentPageView nextButton lastButton'.w(),
   anchorLocation: SC.ANCHOR_BOTTOM
@@ -11,40 +11,40 @@ TwSprout.bottomView =  SC.ToolbarView.design({
   /*firstButton: SC.ButtonView.design({
         layout: { centerY: 0, height: 24, left: 12, width: 100 },
         title:  "| < first",
-	    target: "TwSprout.lawController",
+	    target: "TextWerk.lawController",
 	    action: "firstPage",
-		isVisibleBinding: 'TwSprout.lawController.showPreviousButton'
+		isVisibleBinding: 'TextWerk.lawController.showPreviousButton'
   }),
 
   previousButton: SC.ButtonView.design({
         layout: { centerY: 0, height: 24, left: 120, width: 100 },
         title:  "< previous",
-	    target: "TwSprout.lawController",
+	    target: "TextWerk.lawController",
 	    action: "previousPage",
-		isVisibleBinding: 'TwSprout.lawController.showPreviousButton'
-		//valueBinding: "TwSprout.lawController.currentPage",
-		//contentBinding: "TwSprout.lawController.currentPage"
+		isVisibleBinding: 'TextWerk.lawController.showPreviousButton'
+		//valueBinding: "TextWerk.lawController.currentPage",
+		//contentBinding: "TextWerk.lawController.currentPage"
   }),
 
   currentPageView: SC.LabelView.design({
         layout: { centerY: 0, height: 18, left: 200, right: 200 },
         textAlign: SC.ALIGN_CENTER,
-        valueBinding: "TwSprout.lawController.displayCurrentPage",
-        contentBinding: "TwSprout.lawController.displayCurrentPage"
+        valueBinding: "TextWerk.lawController.displayCurrentPage",
+        contentBinding: "TextWerk.lawController.displayCurrentPage"
 
   }),
   nextButton: SC.ButtonView.design({
         layout: { centerY: 0, height: 24, right: 120, width: 100 },
         title:  "next >",
-	    target: "TwSprout.lawController",
+	    target: "TextWerk.lawController",
 	    action: "nextPage",
-	    isVisibleBinding: 'TwSprout.lawController.showLastButton'
+	    isVisibleBinding: 'TextWerk.lawController.showLastButton'
   }),
   lastButton: SC.ButtonView.design({
         layout: { centerY: 0, height: 24, right: 12, width: 100 },
         title:  "last > |",
-	    target: "TwSprout.lawController",
+	    target: "TextWerk.lawController",
 	    action: "lastPage",
-	    isVisibleBinding: 'TwSprout.lawController.showLastButton'
+	    isVisibleBinding: 'TextWerk.lawController.showLastButton'
   })*/
 });

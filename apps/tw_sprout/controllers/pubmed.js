@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout.pubmedController
+// Project:   TextWerk.pubmedController
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 /** @class
 
@@ -10,8 +10,8 @@
 
   @extends SC.ArrayController
 */
-TwSprout.pubmedController = SC.ArrayController.create(
-/** @scope TwSprout.pubmedController.prototype */ {
+TextWerk.pubmedController = SC.ArrayController.create(
+/** @scope TextWerk.pubmedController.prototype */ {
 	searching: NO,
 	noResults: NO,
 	totalsCount: "",
@@ -66,7 +66,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
 		            .send(); 
 		 }
 	      ret = len === 1 ? "1 result"  : "%@ results".fmt(len);
-	      ret = ret + " for search term: "+TwSprout.pubmedController.get('searchTerm');
+	      ret = ret + " for search term: "+TextWerk.pubmedController.get('searchTerm');
 	    } else ret = "No results";
 
 	    return ret ;
@@ -78,7 +78,7 @@ TwSprout.pubmedController = SC.ArrayController.create(
 	},
 	resultsDidChange: function(){ 
 		//var content = this.get('content');
-		//results = TwSprout.store.find(TwSprout.Pubmed);
+		//results = TextWerk.store.find(TextWerk.Pubmed);
 		//console.log("new content -> %@,".fmt(results.getEach('pmid')));
 	}.observes('content'),  
 	
@@ -103,16 +103,16 @@ TwSprout.pubmedController = SC.ArrayController.create(
 			            .send();
 		}
 		console.log('search was triggered with: '+this.get('searchTerm'));
-		TwSprout.pubmedController.set('searching', YES);
-		//TwSprout.store.reset();
-		//TwSprout.pubmedController.set('content', null);
-		TwSprout.store.reset();
-		var results = TwSprout.store.find(TwSprout.RESULTS_QUERY);
+		TextWerk.pubmedController.set('searching', YES);
+		//TextWerk.store.reset();
+		//TextWerk.pubmedController.set('content', null);
+		TextWerk.store.reset();
+		var results = TextWerk.store.find(TextWerk.RESULTS_QUERY);
 		//console.log("results are: "+results.length);
 		results.refresh(); // this refresh makes sure that I get the update RecordArray displayed in the view
-		//var results = TwSprout.store.find(SC.Query.remote(TwSprout.Pubmed, {orderBy: 'guid,title'}));
+		//var results = TextWerk.store.find(SC.Query.remote(TextWerk.Pubmed, {orderBy: 'guid,title'}));
 		
-		TwSprout.pubmedController.set('content', results);
+		TextWerk.pubmedController.set('content', results);
 	},
 	
 	newSearch: function(evt){	 

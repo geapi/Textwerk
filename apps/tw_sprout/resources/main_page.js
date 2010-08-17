@@ -1,11 +1,11 @@
 // ==========================================================================
-// Project:   TwSprout - mainPage
+// Project:   TextWerk - mainPage
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 // This page describes the main user interface for your application.  
-TwSprout.mainPage = SC.Page.design({
+TextWerk.mainPage = SC.Page.design({
 
   // The main pane is made visible on screen as soon as your app is loaded.
   // Add childViews to this pane for views to display immediately on page 
@@ -32,30 +32,30 @@ TwSprout.mainPage = SC.Page.design({
 		searchedTerm: SC.LabelView.design({
 			        layout: { centerY: 0, height: 18, left: 200, right: 200, width: 700},
 			        textAlign: SC.ALIGN_CENTER,
-			        valueBinding: 'TwSprout.lawController.searchTermOverviewL',
-					contentBinding: 'TwSprout.lawController.searchTermOverviewL'
+			        valueBinding: 'TextWerk.lawController.searchTermOverviewL',
+					contentBinding: 'TextWerk.lawController.searchTermOverviewL'
 
 			  }),
 		 loadingImage: SC.ImageView.design({
 		    layout: { top: 14, height: 16,  right: 350, width: 16 },
 		    value: sc_static('images/loading'),
 		    useImageCache: NO,
-		    isVisibleBinding: 'TwSprout.lawController.searching'
+		    isVisibleBinding: 'TextWerk.lawController.searching'
 		  }),
 		 searchField: SC.TextFieldView.design({
 		        layout: { centerY: 0, height: 24, right: 120, width: 200 },
 		        controlSize: SC.LARGE_CONTROL_SIZE,
 		        fontWeight: SC.BOLD_WEIGHT,
 		        hint:   'type your search here',
-				valueBinding: 'TwSprout.lawController.searchTermLaw',
-				target: "TwSprout.lawController",
+				valueBinding: 'TextWerk.lawController.searchTermLaw',
+				target: "TextWerk.lawController",
 				//action: "newSearch",
 				keyDown: function(evt) {
  					sc_super(); // necessary to guarantee regular handling of keyDown events, 
 								// want to avoid that this overwrite messes everything up
 					if (evt.charCode === 13) {
 						// trigger the search after we've seen an "enter", seems to have hickups in FF
-							TwSprout.lawController.searchPubmed(); 
+							TextWerk.lawController.searchPubmed(); 
 					        return YES;
 					      } else {
 					        return NO;
@@ -66,14 +66,14 @@ TwSprout.mainPage = SC.Page.design({
 		 searchButton: SC.ButtonView.design({
 	        layout: { centerY: 0, height: 24, right: 12, width: 100 },
 	        title:  "Search",
-			target: "TwSprout.lawController",
+			target: "TextWerk.lawController",
 			action: "searchPubmed"
 	      })
 	    }),
 
 	    middleView: SC.ContainerView.design({
 	      layout: { top: 45, bottom: 32, left: 0, right: 0 },
-	      //selectionBinding: 'TwSprout.lawController.selection'
+	      //selectionBinding: 'TextWerk.lawController.selection'
 	    }),
 
 	    bottomView: SC.ToolbarView.design({
@@ -84,41 +84,41 @@ TwSprout.mainPage = SC.Page.design({
 		  /*firstButton: SC.ButtonView.design({
 	            layout: { centerY: 0, height: 24, left: 12, width: 100 },
 	            title:  "| < first",
-			    target: "TwSprout.lawController",
+			    target: "TextWerk.lawController",
 			    action: "firstPage",
-				isVisibleBinding: 'TwSprout.lawController.showPreviousButton'
+				isVisibleBinding: 'TextWerk.lawController.showPreviousButton'
 	      }),
 
 		  previousButton: SC.ButtonView.design({
 	            layout: { centerY: 0, height: 24, left: 120, width: 100 },
 	            title:  "< previous",
-			    target: "TwSprout.lawController",
+			    target: "TextWerk.lawController",
 			    action: "previousPage",
-				isVisibleBinding: 'TwSprout.lawController.showPreviousButton'
-				//valueBinding: "TwSprout.lawController.currentPage",
-				//contentBinding: "TwSprout.lawController.currentPage"
+				isVisibleBinding: 'TextWerk.lawController.showPreviousButton'
+				//valueBinding: "TextWerk.lawController.currentPage",
+				//contentBinding: "TextWerk.lawController.currentPage"
 	      }),
 
 		  currentPageView: SC.LabelView.design({
 		        layout: { centerY: 0, height: 18, left: 200, right: 200 },
 		        textAlign: SC.ALIGN_CENTER,
-		        valueBinding: "TwSprout.lawController.displayCurrentPage",
-		        contentBinding: "TwSprout.lawController.displayCurrentPage"
+		        valueBinding: "TextWerk.lawController.displayCurrentPage",
+		        contentBinding: "TextWerk.lawController.displayCurrentPage"
 
 		  }),
 		  nextButton: SC.ButtonView.design({
 	            layout: { centerY: 0, height: 24, right: 120, width: 100 },
 	            title:  "next >",
-			    target: "TwSprout.lawController",
+			    target: "TextWerk.lawController",
 			    action: "nextPage",
-			    isVisibleBinding: 'TwSprout.lawController.showLastButton'
+			    isVisibleBinding: 'TextWerk.lawController.showLastButton'
 	      }),
 		  lastButton: SC.ButtonView.design({
 		        layout: { centerY: 0, height: 24, right: 12, width: 100 },
 	            title:  "last > |",
-			    target: "TwSprout.lawController",
+			    target: "TextWerk.lawController",
 			    action: "lastPage",
-			    isVisibleBinding: 'TwSprout.lawController.showLastButton'
+			    isVisibleBinding: 'TextWerk.lawController.showLastButton'
 		  })*/
 	    })
   })

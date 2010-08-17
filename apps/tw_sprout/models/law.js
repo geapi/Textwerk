@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout.Law
+// Project:   TextWerk.Law
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout */
+/*globals TextWerk */
 
 /** @class
 
@@ -11,8 +11,8 @@
   @extends SC.Record
   @version 0.1
 */
-TwSprout.Law = SC.Record.extend(
-/** @scope TwSprout.Law.prototype */ {
+TextWerk.Law = SC.Record.extend(
+/** @scope TextWerk.Law.prototype */ {
 
   	date: SC.Record.attr(String),
 	doc_type: SC.Record.attr(String),

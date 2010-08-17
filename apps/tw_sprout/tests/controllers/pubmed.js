@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   TwSprout.pubmedController Unit Test
+// Project:   TextWerk.pubmedController Unit Test
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout module test ok equals same stop start */
+/*globals TextWerk module test ok equals same stop start */
 
-module("TwSprout.pubmedController");
+module("TextWerk.pubmedController");
 
-// TODO: Replace with real unit test for TwSprout.pubmedController
+// TODO: Replace with real unit test for TextWerk.pubmedController
 test("test description", function() {
   var expected = "test";
   var result   = "test";

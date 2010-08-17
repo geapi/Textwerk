@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   TwSprout.LAW_CONTENT
+// Project:   TextWerk.LAW_CONTENT
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TwSprout*/
+/*globals TextWerk*/
 
 /** @class
 
@@ -11,8 +11,8 @@
   @extends SC.Responder
 */
 sc_require('views/law_views');
-TwSprout.LAW_CONTENT_TOPLEVEL = SC.Responder.create(
-/** @scope TwSprout.LAW_CONTENT.prototype */ {
+TextWerk.LAW_CONTENT_TOPLEVEL = SC.Responder.create(
+/** @scope TextWerk.LAW_CONTENT.prototype */ {
   /**
     The next state to check if this state does not implement the action.
   */
@@ -22,17 +22,17 @@ TwSprout.LAW_CONTENT_TOPLEVEL = SC.Responder.create(
   // EVENTS
   //
   didBecomeFirstResponder: function() {
-    TwSprout.setPath('mainPage.mainPane.middleView.nowShowing', 'TwSprout.lawViews.lawTopLevelView');
-    //TwSprout.setPath('mainPage.mainPane.middleView.nowShowing', 'TwSprout.lawViews.lawSecondLevelView');
-    //TwSprout.setPath('mainPage.mainPane.middleView.nowShowing', 'TwSprout.lawViews.lawFullTextView');
+    TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawTopLevelView');
+    //TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawSecondLevelView');
+    //TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawFullTextView');
   },
   
   willLoseFirstResponder: function() {
-    TwSprout.setPath('mainPage.mainPane.contentView.nowShowing', '');
+    TextWerk.setPath('mainPage.mainPane.contentView.nowShowing', '');
   }
 }) ;
-TwSprout.LAW_CONTENT_SECONDLEVEL = SC.Responder.create(
-/** @scope TwSprout.LAW_CONTENT.prototype */ {
+TextWerk.LAW_CONTENT_SECONDLEVEL = SC.Responder.create(
+/** @scope TextWerk.LAW_CONTENT.prototype */ {
   /**
     The next state to check if this state does not implement the action.
   */
@@ -42,12 +42,13 @@ TwSprout.LAW_CONTENT_SECONDLEVEL = SC.Responder.create(
   // EVENTS
   //
   didBecomeFirstResponder: function() {
-    //TwSprout.setPath('mainPage.mainPane.middleView.nowShowing', 'TwSprout.lawViews.lawTopLevelView');
-    TwSprout.setPath('mainPage.mainPane.middleView.nowShowing', 'TwSprout.lawViews.lawSecondLevelView');
-    //TwSprout.setPath('mainPage.mainPane.middleView.nowShowing', 'TwSprout.lawViews.lawFullTextView');
+    //TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.LawDetailView');
+    //console.log("2nd level got first responder");
+    TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawSecondLevelView');
+    //TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawFullTextView');
   },
   
   willLoseFirstResponder: function() {
-    TwSprout.setPath('mainPage.mainPane.contentView.nowShowing', '');
+    TextWerk.setPath('mainPage.mainPane.contentView.nowShowing', '');
   }
 }) ;
