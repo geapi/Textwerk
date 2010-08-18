@@ -11,7 +11,7 @@ Custom view that renders the overview of a pubmed entry
 */
 sc_require('ext/delegates');
 
-TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
+TextWerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
 	
 	_mouse_x: 15,
 	_mouse_y: 15,
@@ -36,14 +36,8 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
             'selected': selected
         };
 
-        //context = context.begin().addClass('searchResultsContainer');
-        /*if (isSelected) {
             this.renderSelected(context, firstTime, classes, content);
-        }
-        else {
-            this.renderUnselected(context, firstTime, classes, content);
-        }*/
-		this.renderUnselected(context, firstTime, classes, content);
+
 
         sc_super();
     },
@@ -53,9 +47,8 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
         //console.log("got a mouse down with guid " + guid);
         if (guid>=0) {
             //console.log("got a mouse down with selection " + TextWerk.lawController.selectedObject);
-			TextWerk.lawController.set('mouse_x', evt.pageX);
-			TextWerk.lawController.set('mouse_y', evt.pageY);
-			TextWerk.lawController.set('currentDetailView',this);
+			this._mouse_x = evt.pageX;
+			this._mouse_y = evt.pageY;
             //TextWerk.documentDetailController.showDocumentDetailsPane(x,y);
             return NO;
         }
@@ -76,7 +69,7 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
         var name = content.get('name');
         var description = content.get('description')?content.get('description'):"n/a";
         var description_length = description.length;
-		description = (description_length > 150) ? (description.substr(0,150)+"&hellip;") : description;
+		description = (description_length > 150) ? (description.substr(0,200)+"&hellip;") : description;
         var date = content.get('date')?content.get('date'):"n/a";
         var doc_type = content.get('doc_type');
 
@@ -85,7 +78,7 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
 
         //context = context.begin().addClass('searchResultsContainer');
         context = context.setClass(classes);
-        context = context.begin('p').addClass('item').addClass('title').push('%@ %@'.fmt('(' + id + ')', name)).end();
+        //context = context.begin('p').addClass('item').addClass('title').push('%@ %@'.fmt('(' + id + ')', name)).end();
         //context = context.end(); // div.top
         //context = context.begin().addClass('bottom');
         context = context.begin('p').addClass('item').addClass('authors');

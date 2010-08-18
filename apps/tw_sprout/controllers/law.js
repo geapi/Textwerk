@@ -17,6 +17,9 @@ TextWerk.lawController = SC.ArrayController.create(
     //contentBindingDefault: SC.Binding.firstObject(),
     searching: NO,
 	selectedObject: null,
+	mouse_x:15,
+	mouse_y:15,
+	currentDetailView: null,
 
 
     hightlight: function() {
@@ -30,6 +33,8 @@ TextWerk.lawController = SC.ArrayController.create(
             //console.log('just got selected:  ' + this.getPath('selection.firstObject').get('guid'));
             //this.get('id');
  			this.set('selectedObject',this.getPath('selection.firstObject') );
+			//TextWerk.documentDetailController.showDocumentDetailsPane();
+			TextWerk.documentDetailController.showPickerPanePointer(this.currentDetailView);
 			//console.log("selected object: "+ this.get('selectedObject'));
             if (TextWerk.LAW_CONTENT_SECONDLEVEL.isFirstResponder) {
                 //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);

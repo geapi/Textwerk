@@ -69,7 +69,7 @@ div.custom-list-item-view span.fulltext {
 } 
 div.custom-list-item-view.selected {
   background-color: #9999FF;
-  height: 180px !important;
+  /*height: 180px !important;*/
   z-index: 999;
 }
 div.second-level-view p{

@@ -17,7 +17,7 @@ TextWerk.lawViews = SC.Page.design({
 		 	  rowHeight: 20, 
 		 	  contentBinding: 'TextWerk.lawController.arrangedObjects',
 		 	  selectionBinding: 'TextWerk.lawController.selection', 
-			  delegate: TextWerk.rowDelegate,
+			  //delegate: TextWerk.rowDelegate,
 			  //selectionBindingDefault: 'SC.Binding.firstObject()',
 		 	  exampleView: TextWerk.LawEntryView
 
