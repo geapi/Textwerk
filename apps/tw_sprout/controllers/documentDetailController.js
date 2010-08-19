@@ -22,6 +22,8 @@ TextWerk.documentDetailController = SC.Object.create(
 	    var pane = SC.PickerPane.create({
 	      layout: { width: 200, height: 250 },
 		  acceptsFirstResponder: YES,
+ 		  nextValidKeyView: 'TextWerk.lawViews.lawTopLevelView',
+		  //nextResponder:'TextWerk.lawViews.lawTopLevelView',
 		  keyDown: function(evt) {
               sc_super(); // necessary to guarantee regular handling of keyDown events, 
               // want to avoid that this overwrite messes everything up

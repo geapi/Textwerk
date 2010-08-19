@@ -3,7 +3,7 @@
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
 /*globals TextWerk */
-
+sc_require('views/graphView');
 // This page describes the main user interface for your application.  
 TextWerk.mainPage = SC.Page.design({
 
@@ -11,7 +11,7 @@ TextWerk.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'middleView topView bottomView'.w(),
+    childViews: 'middleView topView bottomView graphView'.w(),
 	    topView: SC.ToolbarView.design({
 	      layout: { top: 0, left: 0, right: 0, height: 45 }, 
 		  childViews: 'labelView taglineView searchedTerm loadingImage searchField searchButton'.w(),
@@ -55,7 +55,7 @@ TextWerk.mainPage = SC.Page.design({
 								// want to avoid that this overwrite messes everything up
 					if (evt.charCode === 13) {
 						// trigger the search after we've seen an "enter", seems to have hickups in FF
-							TextWerk.lawController.searchPubmed(); 
+							//TextWerk.lawController.searchPubmed(); 
 					        return YES;
 					      } else {
 					        return NO;
@@ -75,6 +75,7 @@ TextWerk.mainPage = SC.Page.design({
 	      layout: { top: 45, bottom: 32, left: 0, right: 0 },
 	      //selectionBinding: 'TextWerk.lawController.selection'
 	    }),
+     	graphView: TextWerk.GraphView,
 
 	    bottomView: SC.ToolbarView.design({
 	      layout: { bottom: 0, left: 0, right: 0, height: 32 },
