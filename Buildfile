@@ -5,7 +5,7 @@
 
 # Add initial buildfile information here
 
-config :all, :required => [:sproutcore, 'flot'], :theme => 'text_werk'
+config :all, :required => [:sproutcore, :flot, :scui, :sai], :theme => 'text_werk'
 
 proxy "/searchPubmed", :to => "localhost:3000"
 proxy "/getResultsCount", :to => "localhost:3000"

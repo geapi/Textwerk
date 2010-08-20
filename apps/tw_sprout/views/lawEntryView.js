@@ -36,6 +36,8 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
             'selected': selected
         };
 
+		console.log("rendering item with context: "+ this.frame().x + " : " + this.frame().y);
+		
         //context = context.begin().addClass('searchResultsContainer');
         /*if (isSelected) {
             this.renderSelected(context, firstTime, classes, content);
@@ -71,6 +73,7 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
    },
     renderSelected: function(context, firstTime, classes, content) {
 	
+		
         var id = content.get('guid');
         id += 1;
         var name = content.get('name');

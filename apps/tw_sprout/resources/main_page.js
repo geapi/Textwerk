@@ -4,6 +4,7 @@
 // ==========================================================================
 /*globals TextWerk */
 sc_require('views/graphView');
+sc_require('views/lineView');
 // This page describes the main user interface for your application.  
 TextWerk.mainPage = SC.Page.design({
 
@@ -76,6 +77,7 @@ TextWerk.mainPage = SC.Page.design({
 	      //selectionBinding: 'TextWerk.lawController.selection'
 	    }),
      	graphView: TextWerk.GraphView,
+		//graphView: TextWerk.LineView,
 
 	    bottomView: SC.ToolbarView.design({
 	      layout: { bottom: 0, left: 0, right: 0, height: 32 },
