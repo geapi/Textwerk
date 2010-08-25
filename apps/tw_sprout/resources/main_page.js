@@ -12,7 +12,7 @@ TextWerk.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'middleView topView bottomView graphView'.w(),
+    childViews: 'middleView topView bottomView'.w(),
 	    topView: SC.ToolbarView.design({
 	      layout: { top: 0, left: 0, right: 0, height: 45 }, 
 		  childViews: 'labelView taglineView searchedTerm loadingImage searchField searchButton'.w(),
@@ -71,13 +71,14 @@ TextWerk.mainPage = SC.Page.design({
 			action: "searchPubmed"
 	      })
 	    }),
-
+		//graphView: TextWerk.GraphView,
+		//graphView: TextWerk.LineView,
+		
 	    middleView: SC.ContainerView.design({
 	      layout: { top: 45, bottom: 32, left: 0, right: 0 },
 	      //selectionBinding: 'TextWerk.lawController.selection'
 	    }),
-     	graphView: TextWerk.GraphView,
-		//graphView: TextWerk.LineView,
+     	
 
 	    bottomView: SC.ToolbarView.design({
 	      layout: { bottom: 0, left: 0, right: 0, height: 32 },

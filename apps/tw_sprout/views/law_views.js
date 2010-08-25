@@ -5,11 +5,11 @@
 /*globals TextWerk */
 sc_require('views/lawEntryView');
 sc_require('ext/delegates');
-
+sc_require('views/lineView');
 
 TextWerk.lawViews = SC.Page.design({
-    lawTopLevelView: SC.ScrollView.design({
-        childViews: 'contentView'.w(),
+    lawTopLevelView: SC.View.design({
+        childViews: 'contentView graphView'.w(),
         hasHorizontalScroller: NO,
         layout: {
             top: 0,
@@ -18,6 +18,7 @@ TextWerk.lawViews = SC.Page.design({
             right: 0
         },
         backgroundColor: 'white',
+		graphView: TextWerk.LineView,
         contentView: SC.GridView.design({
             columnWidth: 150,
             rowHeight: 20,
@@ -27,7 +28,8 @@ TextWerk.lawViews = SC.Page.design({
             //selectionBindingDefault: 'SC.Binding.firstObject()',
             exampleView: TextWerk.LawEntryView
 
-        })
+        }), 
+		//contentView.makeFirstResponder()
     }),
     lawFullTextView: SC.ScrollView.design({
         hasHorizontalScroller: NO,

@@ -36,7 +36,7 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
             'selected': selected
         };
 
-		console.log("rendering item with context: "+ this.frame().x + " : " + this.frame().y);
+		//console.log("rendering item with context: "+ this.frame().x + " : " + this.frame().y);
 		
         //context = context.begin().addClass('searchResultsContainer');
         /*if (isSelected) {
