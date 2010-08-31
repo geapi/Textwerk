@@ -1,6 +1,6 @@
 // ==========================================================================
 // Project:   TextWerk - views
-// Copyright: ©2010 
+// Copyright: ©2010eco
 // ==========================================================================
 /*globals TextWerk */
 sc_require('views/lawEntryView');
@@ -18,17 +18,23 @@ TextWerk.lawViews = SC.Page.design({
             right: 0
         },
         backgroundColor: 'white',
-		graphView: TextWerk.LineView,
-        contentView: SC.GridView.design({
+		contentView: SC.GridView.design({
             columnWidth: 150,
             rowHeight: 20,
             contentBinding: 'TextWerk.lawController.arrangedObjects',
             selectionBinding: 'TextWerk.lawController.selection',
+			//valueBinding: 'TextWerk.lawController.collectionViewRef',
             //delegate: TextWerk.rowDelegate,
             //selectionBindingDefault: 'SC.Binding.firstObject()',
             exampleView: TextWerk.LawEntryView
 
-        }), 
+        }),
+		graphView: TextWerk.LineView.design({
+			collectionViewRef: this.contentView,
+			
+			//TextWerk.lawController.currentDetailView: this.contentView
+		}),
+		
 		//contentView.makeFirstResponder()
     }),
     lawFullTextView: SC.ScrollView.design({

@@ -10,7 +10,7 @@
   
   @extends SC.Object
 */
-	sc_require('ext/bindings');
+sc_require('ext/bindings');
 
 TextWerk = SC.Application.create(
   /** @scope TextWerk.prototype */ {

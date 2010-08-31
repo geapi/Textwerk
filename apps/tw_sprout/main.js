@@ -21,7 +21,7 @@ TextWerk.main = function main() {
   // turns off the contextmenu aka right click
   //document.body.oncontextmenu = function(){ return false; };
 
-  TextWerk.getPath('mainPage.mainPane').append() ; 
+  TextWerk.getPath('mainPage.mainPane').append(); 
   TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
   //TextWerk.makeFirstResponder(TextWerk.PUBMED_CONTENT);
   //TextWerk.server.preload(TextWerk.Pubmed.FIXTURES);

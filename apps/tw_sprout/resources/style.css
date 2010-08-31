@@ -75,3 +75,6 @@ div.custom-list-item-view.selected {
 div.second-level-view p{
 	color:black;
 }
+div.textwerk-line{
+	/*z-index: 99;*/
+}

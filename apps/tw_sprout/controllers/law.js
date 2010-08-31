@@ -20,6 +20,9 @@ TextWerk.lawController = SC.ArrayController.create(
 	mouse_x:15,
 	mouse_y:15,
 	currentDetailView: null,
+	collectionViewRef: null,
+	searchTermOverview: "",
+	searchTermLaw: "",
 
 
     hightlight: function() {
