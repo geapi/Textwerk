@@ -23,14 +23,25 @@ TextWerk.lawViews = SC.Page.design({
             rowHeight: 20,
             contentBinding: 'TextWerk.lawController.arrangedObjects',
             selectionBinding: 'TextWerk.lawController.selection',
-			//valueBinding: 'TextWerk.lawController.collectionViewRef',
+			//valueBinding: '',
             //delegate: TextWerk.rowDelegate,
             //selectionBindingDefault: 'SC.Binding.firstObject()',
-            exampleView: TextWerk.LawEntryView
-
+            exampleView: TextWerk.LawEntryView,
+			render: function(context, firstTime){
+				if(firstTime){
+				//console.log('rendering collection container as '+ this);
+				TextWerk.lawController.set('collectionViewRef',this);
+				}
+				sc_super();
+			},
+			//mouseDown:function(evt){
+			//	sc_super();
+			//	console.log("someboody called mouseDown on gridvuiew");
+			//	return NO;
+			//}
         }),
 		graphView: TextWerk.LineView.design({
-			collectionViewRef: this.contentView,
+			nextResponder: this.contentView,
 			
 			//TextWerk.lawController.currentDetailView: this.contentView
 		}),

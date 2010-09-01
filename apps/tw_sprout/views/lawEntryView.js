@@ -51,7 +51,7 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
     },
     mouseDown: function(evt) {
         var guid = this.get('content').get('guid');
-        //console.log("got a mouse down with evt " + evt.pageX + ":" + evt.pageY);
+        console.log("got a mouse down with evt " + evt.pageX + ":" + evt.pageY);
         //console.log("got a mouse down with guid " + guid);
         if (guid>=0) {
             //console.log("got a mouse down with selection " + TextWerk.lawController.selectedObject);

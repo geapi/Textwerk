@@ -107,7 +107,7 @@ TextWerk.documentDetailController = SC.Object.create(
                 },
                 childViews: 'labelView buttonView'.w(),
 
-                labelView: SC.CollectionView.extend({
+                labelView: SC.LabelView.extend({
                     //acceptsFirstResponder: YES,
                     layout: {
                         top: 15,

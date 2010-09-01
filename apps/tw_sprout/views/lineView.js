@@ -25,9 +25,9 @@ TextWerk.LineView = SC.View.design({
 	        sc_super(); // necessary to guarantee regular handling of keyDown events, 
 	        // want to avoid that this overwrite messes everything up
 	       // console.log("got key event on top view for SVG: " + evt.keyCode)
-	        console.log("content " + this.get('contentViewRef'));
-	        var cv = TextWerk.lawViews.lawTopLevelView;//this.get('contentViewRef');
-	        return cv.mouseDown(evt);
+	        //console.log("content " + TextWerk.lawController.get('collectionViewRef'));
+	        //var cv = TextWerk.lawViews.lawTopLevelView;//this.get('contentViewRef');
+	        return NO; //cv.mouseDown(evt);
 	    },
     line: Sai.CanvasView.design({
         acceptsFirstResponder: YES,
@@ -51,6 +51,14 @@ TextWerk.LineView = SC.View.design({
             strokeWidth: 4,
             cap: 'rounded',
             path: 'M828,375 l5,-30  20,20 z'
-        })
+        }),
+		mouseDown:function(evt){
+			sc_super();
+			//console.log("someboody called mouseDown on canvas");
+			var cv = TextWerk.lawController.get('collectionViewRef');
+			cv.becomeFirstResponder();
+			cv.mouseDown(evt);
+			return NO;
+		}
     })
 });
