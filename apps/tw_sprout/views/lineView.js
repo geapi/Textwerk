@@ -2,7 +2,7 @@
 // Project:   TextWerk.LineView
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals TextWerk */
+/*globals TextWerk, Sai */
 
 /** @class
 
@@ -10,9 +10,10 @@ Custom view that renders line(s) between entries
 
 @extends SC.View
 */
-TextWerk.LineView = SC.View.design({
+TextWerk.LineView = SC.View.extend({
     classNames: ['textwerk-line'],
-    collectionViewRef: null,
+    cr: '',
+    //collectionRef: 'Testing',
     layout: {
         top: 30,
         left: 0,
@@ -21,14 +22,20 @@ TextWerk.LineView = SC.View.design({
     },
     childViews: 'line'.w(),
     acceptsFirstResponder: YES,
-   	 mouseDown: function(evt) {
-	        sc_super(); // necessary to guarantee regular handling of keyDown events, 
-	        // want to avoid that this overwrite messes everything up
-	       // console.log("got key event on top view for SVG: " + evt.keyCode)
-	        //console.log("content " + TextWerk.lawController.get('collectionViewRef'));
-	        //var cv = TextWerk.lawViews.lawTopLevelView;//this.get('contentViewRef');
-	        return NO; //cv.mouseDown(evt);
-	    },
+    mouseDown: function(evt) {
+        sc_super(); 
+        console.log("mouse DOWN on CANVAS: " + this.get('cr'));
+        var cv = this.get('cr'); 
+        cv.mouseDown(evt);
+        return NO; 
+    },
+    mouseUp: function(evt) {
+        sc_super();
+        console.log("mouse UP on CANVAS: " + this.get('cr'));
+        var cv = this.get('cr'); 
+        cv.mouseUp(evt);
+        return NO;
+    },
     line: Sai.CanvasView.design({
         acceptsFirstResponder: YES,
         layout: {
@@ -52,13 +59,5 @@ TextWerk.LineView = SC.View.design({
             cap: 'rounded',
             path: 'M828,375 l5,-30  20,20 z'
         }),
-		mouseDown:function(evt){
-			sc_super();
-			//console.log("someboody called mouseDown on canvas");
-			var cv = TextWerk.lawController.get('collectionViewRef');
-			cv.becomeFirstResponder();
-			cv.mouseDown(evt);
-			return NO;
-		}
     })
 });

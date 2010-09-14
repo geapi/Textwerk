@@ -19,9 +19,8 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
     classNames: ['custom-list-item-view'],
 	
 	//click: 'TextWerk.documentDetailController.showDocumentDetailsPane(x,y)',
-
+	//backgroundColor: 'transparent',
     displayProperties: 'isSelected'.w(),
-
     contentDisplayProperties: 'guid name'.w(),
 
     render: function(context, firstTime) {

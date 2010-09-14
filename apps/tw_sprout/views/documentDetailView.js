@@ -21,7 +21,7 @@ TextWerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
 	//click: 'TextWerk.documentDetailController.showDocumentDetailsPane(x,y)',
 
     displayProperties: 'isSelected'.w(),
-
+ 
     contentDisplayProperties: 'guid name'.w(),
 
     render: function(context, firstTime) {

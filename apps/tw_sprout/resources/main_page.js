@@ -76,6 +76,7 @@ TextWerk.mainPage = SC.Page.design({
 		
 	    middleView: SC.ContainerView.design({
 	      layout: { top: 45, bottom: 32, left: 0, right: 0 },
+	      backgroundColor: 'white',
 	      //selectionBinding: 'TextWerk.lawController.selection'
 	    }),
      	

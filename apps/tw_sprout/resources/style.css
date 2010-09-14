@@ -70,11 +70,14 @@ div.custom-list-item-view span.fulltext {
 div.custom-list-item-view.selected {
   background-color: #9999FF;
   /*height: 180px !important;*/
-  z-index: 999;
+  z-index: 2;
 }
 div.second-level-view p{
 	color:black;
 }
 div.textwerk-line{
-	/*z-index: 99;*/
+	z-index: 1;
 }
+div.textwerk-grid{
+	z-index:2;
+	}
