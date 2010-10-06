@@ -3,7 +3,7 @@
 // Copyright: ©2010 Apple, Inc.
 // ==========================================================================
 /*globals TextWerk */
-TextWerk.bottomView =  SC.ToolbarView.design({
+TextWerk.bottomBar =  SC.ToolbarView.design({
   layout: { bottom: 0, left: 0, right: 0, height: 32 },
   //childViews: 'firstButton previousButton currentPageView nextButton lastButton'.w(),
   anchorLocation: SC.ANCHOR_BOTTOM

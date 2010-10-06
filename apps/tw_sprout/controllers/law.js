@@ -40,10 +40,10 @@ TextWerk.lawController = SC.ArrayController.create(
 			TextWerk.documentDetailController.showPickerPanePointer(this.currentDetailView);
 			//console.log("selected object: "+ this.get('selectedObject'));
             if (TextWerk.LAW_CONTENT_SECONDLEVEL.isFirstResponder) {
-                //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
+                extWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
             } else
             {
-                //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
+                TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
             }
         }
     }.observes('selection'),

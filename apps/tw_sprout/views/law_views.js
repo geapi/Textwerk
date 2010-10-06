@@ -3,9 +3,6 @@
 // Copyright: ©2010eco
 // ==========================================================================
 /*globals TextWerk */
-sc_require('views/lawEntryView');
-sc_require('ext/delegates');
-sc_require('views/lineView');
 sc_require('views/master_view');
 
 TextWerk.lawViews = SC.Page.design({
@@ -16,6 +13,14 @@ TextWerk.lawViews = SC.Page.design({
 		contentValueKey: 'name'
 	
 	}),
+	lawSecondLevelView:LinkIt.CanvasView.design( SCUI.Cleanup, {
+      layout: { left: 0, right: 0, top: 56, bottom: 0 },
+      classNames: ['family-canvas'],
+      contentBinding: SC.Binding.from('TextWerk.nodeController').oneWay(),
+      selectionBinding: 'TextWerk.lawController.selection',
+      nodeViewDelegate: TextWerk.nodeController
+    }),
+
     lawFullTextView: SC.ScrollView.design({
         hasHorizontalScroller: NO,
         layout: {

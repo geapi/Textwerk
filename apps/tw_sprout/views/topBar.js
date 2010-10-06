@@ -4,7 +4,7 @@
 // ==========================================================================
 /*globals TextWerk */
 
-TextWerk.topView = SC.ToolbarView.design({
+TextWerk.topBar = SC.ToolbarView.design({
     layout: {
         top: 0,
         left: 0,

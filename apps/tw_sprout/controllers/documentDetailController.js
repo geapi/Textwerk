@@ -31,6 +31,7 @@ TextWerk.documentDetailController = SC.Object.create(
               if (evt.keyCode === 27) {
                   // trigger the search after we've seen an "enter", seems to have hickups in FF
                   pane.remove();
+				TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
                   return YES;
               } else {
                   return NO;

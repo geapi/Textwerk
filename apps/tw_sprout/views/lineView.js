@@ -26,14 +26,14 @@ TextWerk.LineView = SC.View.extend({
         sc_super(); 
         console.log("mouse DOWN on CANVAS: " + this.get('cr'));
         var cv = this.get('cr'); 
-        cv.mouseDown(evt);
+        //cv.mouseDown(evt);
         return NO; 
     },
     mouseUp: function(evt) {
         sc_super();
         console.log("mouse UP on CANVAS: " + this.get('cr'));
         var cv = this.get('cr'); 
-        cv.mouseUp(evt);
+        //cv.mouseUp(evt);
         return NO;
     },
     line: Sai.CanvasView.design({

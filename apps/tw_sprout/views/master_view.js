@@ -9,10 +9,6 @@
 Custom view that renders the overview of a pubmed entry
 
 @extends SC.View */
-sc_require('views/lawEntryView');
-sc_require('ext/delegates');
-sc_require('views/lineView');
-
 TextWerk.MasterView = SC.View.extend(
 /** @scope myApp.MasterView.prototype */ {
  
@@ -26,6 +22,7 @@ TextWerk.MasterView = SC.View.extend(
   searchPath: '',       // Binding Path for the text searching
   contentValueKey: '',  // ContentValueKey to be passed to the ListView
   collectionViewRef: '',
+  canvasReference: '',
  
   /**
     Overwritten createChildView where you set up all 
@@ -33,7 +30,7 @@ TextWerk.MasterView = SC.View.extend(
     going to use the Binding Paths
   */
   createChildViews: function() {
-    var childViews = [], view, collectRef;
+    var childViews = [], view, collectRef, cRef;
  
     //Add the search text field
     collectRef = view = this.createChildView(
@@ -47,10 +44,18 @@ TextWerk.MasterView = SC.View.extend(
 			//valueBinding: '',
             //delegate: TextWerk.rowDelegate,
             //selectionBindingDefault: 'SC.Binding.firstObject()',
+			canvasRef: cRef,
             exampleView: TextWerk.LawEntryView,
 			contentValueKey: this.get('contentValueKey'),
 	        contentBinding: this.get('contentPath'),
 	        selectionBinding: this.get('selectionPath'),
+			mouseDown:function(evt){
+				sc_super();
+				console.log("mouse down on grid with: "+this.get('canvasRef'));
+				var cv = this.get('canvasRef'); 
+		        cv.mouseDown(evt);
+				return NO;
+			}
         }),	
       { rootElementPath: [0] }
     );
@@ -58,13 +63,15 @@ TextWerk.MasterView = SC.View.extend(
     childViews.push(view);
  	var sp = this.get('searchPath');
 	//console.log("ref"+collectRef);
-    view = this.createChildView(
+    cRef = view = this.createChildView(
 		TextWerk.LineView.design({
 			//valueBinding: sp,
 			cr: collectRef,
 		}),
       { rootElementPath: [1] }
     );
+    collectRef.set('canvasRef',view);
+	this.set('canvasReference', view);
     childViews.push(view);
  
     this.set('childViews', childViews); 
