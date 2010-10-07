@@ -4,21 +4,50 @@
 // ==========================================================================
 /*globals TextWerk */
 sc_require('views/master_view');
+sc_require('views/node');
 
 TextWerk.lawViews = SC.Page.design({
     lawTopLevelView: TextWerk.MasterView.design({
-	    contentPath: 'TextWerk.lawController.arrangedObjects',
+        contentPath: 'TextWerk.lawController.arrangedObjects',
         selectionPath: 'TextWerk.lawController.selection',
-		//searchPath: 'myApp.myRecordsController.search',
-		contentValueKey: 'name'
-	
-	}),
-	lawSecondLevelView:LinkIt.CanvasView.design( SCUI.Cleanup, {
-      layout: { left: 0, right: 0, top: 56, bottom: 0 },
-      classNames: ['family-canvas'],
-      contentBinding: SC.Binding.from('TextWerk.nodeController').oneWay(),
-      selectionBinding: 'TextWerk.lawController.selection',
-      nodeViewDelegate: TextWerk.nodeController
+        //searchPath: 'myApp.myRecordsController.search',
+        contentValueKey: 'name'
+
+    }),
+    lawSecondLevelView: SC.View.design({
+        childViews: "master canvas".w(),
+        master: SC.ListView.design({
+            classNames: ['master-list'],
+            layout: {
+                left: 0,
+                top: 56,
+                width: 259,
+                bottom: 36
+            },
+            rowHeight: 43,
+            rowSpacing: 2,
+            //exampleView: TextWerk.FamilyItemView,
+            selectionBinding: 'TextWerk.documentCollectionsController.selection',
+            contentBinding: 'TextWerk.documentCollectionsController',
+            contentValueKey: 'name',
+            actOnSelect: YES,
+            target: TextWerk.documentCollectionsController,
+            action: 'changedCollection'
+        }),
+        canvas: LinkIt.CanvasView.design(SCUI.Cleanup, {
+            layout: {
+                left: 259,
+                right: 0,
+                top: 56,
+                bottom: 0
+            },
+            classNames: ['family-canvas'],
+            contentBinding: SC.Binding.from('TextWerk.documentCollectionContentsController').oneWay(),
+            selectionBinding: 'TextWerk.documentCollectionContentsController.selection',
+			exampleView: TextWerk.NodeView,
+            //nodeViewDelegate: TextWerk.documentCollectionController
+            
+        })
     }),
 
     lawFullTextView: SC.ScrollView.design({

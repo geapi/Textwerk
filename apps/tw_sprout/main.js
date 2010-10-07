@@ -23,6 +23,7 @@ TextWerk.main = function main() {
 
   TextWerk.getPath('mainPage.mainPane').append(); 
   TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
+ //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
   //TextWerk.makeFirstResponder(TextWerk.PUBMED_CONTENT);
   //TextWerk.server.preload(TextWerk.Pubmed.FIXTURES);
   //TextWerk.server.preload(TextWerk.Law.FIXTURES);  // doesn't work, not need to load fixtures, turn them on in the core.js by creating the store from fixtures
@@ -32,6 +33,9 @@ TextWerk.main = function main() {
 	var query = SC.Query.local(TextWerk.Law, { orderBy: 'guid,name' });
 	var results = TextWerk.store.find(query);
 	TextWerk.lawController.set('content', results);
+	
+	var store = TextWerk.get('store');
+	TextWerk.documentCollectionsController.set('content', store.find(TextWerk.DocumentCollection));
 	
 	//var query = SC.Query.remote(TextWerk.Pubmed, { orderBy: 'guid,title' });
 	//var results =  TextWerk.store.find(TextWerk.RESULTS_QUERY)
