@@ -38,7 +38,7 @@ TextWerk.lawViews = SC.Page.design({
             layout: {
                 left: 259,
                 right: 0,
-                top: 56,
+                top: 0,
                 bottom: 0
             },
             classNames: ['family-canvas'],

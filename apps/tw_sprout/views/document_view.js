@@ -16,7 +16,7 @@ TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
         top: 0,
         left: 0,
         width: 150,
-        height: 45
+        height: 145
     },
     displayProperties: ['content', 'isSelected'],
 
@@ -25,9 +25,39 @@ TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
     render: function(context) {
         var c = this.get('content');
         context.addClass('document');
+		var content = this.get('content');
+		var id = content.get('guid');
+        id += 1;
+        var name = content.get('name');
+        var description = content.get('description')?content.get('description'):"n/a";
+        var description_length = description.length;
+		description = (description_length > 150) ? (description.substr(0,200)+"&hellip;") : description;
+        var date = content.get('date')?content.get('date'):"n/a";
+        var doc_type = content.get('doc_type');
+
+        var isSelected = this.get('isSelected');
+
+
+        //context = context.begin().addClass('searchResultsContainer');
+        //context = context.setClass(classes);
+        //context = context.begin('p').addClass('item').addClass('title').push('%@ %@'.fmt('(' + id + ')', name)).end();
+        //context = context.end(); // div.top
+        //context = context.begin().addClass('bottom');
+        context = context.begin('p').addClass('item').addClass('authors');
+        context = context.begin('span').addClass('label').push('description:').end();
+        context = context.begin('span').addClass('value').push(description).end();
+        context = context.end(); // p.item.company
+        context = context.begin('p').addClass('item').addClass('date');
+        context = context.begin('span').addClass('label').push('Date:').end();
+        context = context.begin('span').addClass('value').push(date).end();
+        context = context.end(); // p.item.name  
+        context = context.begin('p').addClass('item').addClass('pmid');
+        context = context.begin('span').addClass('label').push('doc_type:').end();
+        context = context.begin('span').addClass('value').push('<a href="http://www.ncbi.nlm.nih.gov/pubmed/' + doc_type + '">' + doc_type + '</a>').end();
+        context = context.end();
         sc_super();
         if (this.get("isSelected")) context.addClass("selected");
-		SC.Logger.log("in render");
+		//SC.Logger.log("in render");
     },
 
     createChildViews: function() {
@@ -72,7 +102,7 @@ TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
                 height: 25
             },
             textAlign: SC.ALIGN_CENTER,
-            valueBinding: SC.binding('.name', content)
+            //valueBinding: SC.binding('.name', content)
         }));
         childViews.push(contentView);
 
