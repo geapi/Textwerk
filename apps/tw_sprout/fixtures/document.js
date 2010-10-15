@@ -7,7 +7,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '1',
     type: "Document",
-    name: 'John',
+    name: 'Brief 1',
     collection: '1',
     referrer: null,
     citee: null,
@@ -18,7 +18,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '2',
     type: "Document",
-    name: 'Nancy',
+    name: 'Brief 2',
     collection: '1',
     referrer: null,
     citee: null,
@@ -28,7 +28,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '3',
     type: "Document",
-    name: 'John Jr',
+    name: 'Brief 3',
     collection: '1',
     referrer: '2',
     citee: '1',
@@ -38,7 +38,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '4',
     type: "Document",
-    name: 'Penelope',
+    name: 'Brief 4',
     collection: '1',
     referrer: '2',
     citee: '1',
@@ -52,7 +52,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '5',
     type: "Document",
-    name: 'Barack Obama Sr.',
+    name: 'Dcoument 1',
     collection: '2',
     referrer: null,
     citee: null,
@@ -63,7 +63,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '6',
     type: "Document",
-    name: 'Lolo Soetoro',
+    name: 'Document 2',
     collection: '2',
     referrer: null,
     citee: null,
@@ -73,7 +73,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '7',
     type: "Document",
-    name: 'Stanley Ann Dunham',
+    name: 'Document 3',
     collection: '2',
     referrer: null,
     citee: null,
@@ -83,7 +83,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '8',
     type: "Document",
-    name: 'Barack Obama',
+    name: 'Document 3',
     collection: '2',
     referrer: '7',
     citee: '5',
@@ -94,7 +94,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '9',
     type: "Document",
-    name: 'Michelle Obama',
+    name: 'Document 4',
     collection: '2',
     referrer: null,
     citee: null,
@@ -105,7 +105,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '10',
     type: "Document",
-    name: 'Malia Ann Obama',
+    name: 'Document 5',
     collection: '2',
     referrer: '9',
     citee: '8',
@@ -116,7 +116,7 @@ TextWerk.Document.FIXTURES = [
   {
     id: '11',
     type: "Document",
-    name: 'Natasha Obama',
+    name: 'Document 6',
     collection: '2',
     referrer: '9',
     citee: '8',

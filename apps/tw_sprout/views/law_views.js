@@ -4,7 +4,7 @@
 // ==========================================================================
 /*globals TextWerk */
 sc_require('views/master_view');
-sc_require('views/node');
+sc_require('views/document_view');
 
 TextWerk.lawViews = SC.Page.design({
     lawTopLevelView: TextWerk.MasterView.design({
@@ -44,8 +44,8 @@ TextWerk.lawViews = SC.Page.design({
             classNames: ['family-canvas'],
             contentBinding: SC.Binding.from('TextWerk.documentCollectionContentsController').oneWay(),
             selectionBinding: 'TextWerk.documentCollectionContentsController.selection',
-			exampleView: TextWerk.NodeView,
-            //nodeViewDelegate: TextWerk.documentCollectionController
+			exampleView: TextWerk.DocumentView,
+            nodeViewDelegate: TextWerk.documentCollectionController
             
         })
     }),

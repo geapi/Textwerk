@@ -1,5 +1,5 @@
 /**
- * The base human view.
+ * The base document view.
  * @class TextWerk.NodeView
  * @extends SC.View
  * @author Georg Apitz
@@ -10,7 +10,8 @@
 /*globals LinkIt TextWerk*/
 sc_require('core');
 
-TextWerk.NodeView = SC.View.extend(LinkIt.NodeView, {
+TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
+	classNames: ['human'],
     layout: {
         top: 0,
         left: 0,

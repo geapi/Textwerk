@@ -35,6 +35,16 @@ TextWerk.documentCollectionController = SC.ObjectController.create(
   addDocument: function() {
     var c = this.get('content') || null;
     if(c) c.addMember(TextWerk.Document, YES);
+  },
+  // Special Function for LinkIt to create the Example View for the Node
+  exampleViewForNode: function(node) {
+    //console.log('%@.exampleViewForContent(%@)'.fmt(this, node));
+
+    if (node.instanceOf(TextWerk.Document)) {
+      return TextWerk.DocumentView;
+    }
+    
+    return null;
   }
 
   
