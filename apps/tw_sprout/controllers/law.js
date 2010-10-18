@@ -37,10 +37,12 @@ TextWerk.lawController = SC.ArrayController.create(
             //this.get('id');
  			this.set('selectedObject',this.getPath('selection.firstObject') );
 			//TextWerk.documentDetailController.showDocumentDetailsPane();
-			TextWerk.documentDetailController.showPickerPanePointer(this.currentDetailView);
-			//console.log("selected object: "+ this.get('selectedObject'));
+			//TextWerk.documentDetailController.showPickerPanePointer(this.currentDetailView);
+			var selectedCollection = this.get('selectedObject').get('collection');
+			console.log("selected object: "+ selectedCollection);
+			//TextWerk.documentCollectionContentsController.set('content',selectedCollection);
             if (TextWerk.LAW_CONTENT_SECONDLEVEL.isFirstResponder) {
-                extWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
+                TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
             } else
             {
                 TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
@@ -52,7 +54,7 @@ TextWerk.lawController = SC.ArrayController.create(
         //alert(this.get('status'));
         //console.log(this.get('content'));
         return this.get('content');
-    }.property('status').cacheable(),
+    }.property('status').cacheable()
 
 	
 

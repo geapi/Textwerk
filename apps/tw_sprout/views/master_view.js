@@ -49,6 +49,9 @@ TextWerk.MasterView = SC.View.extend(
 			contentValueKey: this.get('contentValueKey'),
 	        contentBinding: this.get('contentPath'),
 	        selectionBinding: this.get('selectionPath'),
+			actOnSelect: YES,
+            target: TextWerk.documentCollectionsController,
+            action: 'changedCollection',
 			mouseDown:function(evt){
 				sc_super();
 				console.log("mouse down on grid with: "+this.get('canvasRef'));

@@ -44,6 +44,7 @@ TextWerk.LAW_CONTENT_SECONDLEVEL = SC.Responder.create(
   didBecomeFirstResponder: function() {
     //TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.LawDetailView');
     //console.log("2nd level got first responder");
+    //TextWerk.documentCollectionsController.selection = 1;
     TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawSecondLevelView');
     //TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawFullTextView');
   },

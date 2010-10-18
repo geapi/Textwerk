@@ -25,7 +25,8 @@ TextWerk.documentCollectionController = SC.ObjectController.create(
   */
   isEditable: NO,
   
-  contentBinding: 'TextWerk.documentCollectionsController.selection',
+  //contentBinding: 'TextWerk.documentCollectionsController.selection',
+  contentBinding: 'TextWerk.lawController.selection',
   contentBindingDefault: SC.Binding.oneWay().single(),
 
   // PUBLIC METHODS

@@ -31,7 +31,7 @@ TextWerk.main = function main() {
   // Step 2. Set the content property on your primary controller.
   // This will make your app come alive!
 	var query = SC.Query.local(TextWerk.Law, { orderBy: 'guid,name' });
-	var results = TextWerk.store.find(query);
+	var results = TextWerk.store.find(TextWerk.Document);
 	TextWerk.lawController.set('content', results);
 	
 	var store = TextWerk.get('store');

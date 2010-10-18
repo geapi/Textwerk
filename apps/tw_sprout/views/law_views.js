@@ -15,7 +15,7 @@ TextWerk.lawViews = SC.Page.design({
 
     }),
     lawSecondLevelView: SC.View.design({
-        childViews: "master canvas".w(),
+        childViews: "canvas".w(),
         master: SC.ListView.design({
             classNames: ['master-list'],
             layout: {
@@ -27,7 +27,8 @@ TextWerk.lawViews = SC.Page.design({
             rowHeight: 43,
             rowSpacing: 2,
             //exampleView: TextWerk.FamilyItemView,
-            selectionBinding: 'TextWerk.documentCollectionsController.selection',
+            //selectionBinding: 'TextWerk.documentCollectionsController.selection',
+			selectionBinding: 'TextWerk.documentCollectionsController.selection',
             contentBinding: 'TextWerk.documentCollectionsController',
             contentValueKey: 'name',
             actOnSelect: YES,
@@ -36,14 +37,16 @@ TextWerk.lawViews = SC.Page.design({
         }),
         canvas: LinkIt.CanvasView.design(SCUI.Cleanup, {
             layout: {
-                left: 259,
+                left: 0,
                 right: 0,
                 top: 0,
                 bottom: 0
             },
             classNames: ['family-canvas'],
-            contentBinding: SC.Binding.from('TextWerk.documentCollectionContentsController').oneWay(),
-            selectionBinding: 'TextWerk.documentCollectionContentsController.selection',
+            //contentBinding: SC.Binding.from('TextWerk.documentCollectionContentsController').oneWay(),
+			contentBinding: SC.Binding.from('TextWerk.lawController').oneWay(),
+			//selectionBinding: 'TextWerk.documentCollectionContentsController.selection',
+			selectionBinding: 'TextWerk.lawController.selection',
 			exampleView: TextWerk.DocumentView,
             nodeViewDelegate: TextWerk.documentCollectionController
             
