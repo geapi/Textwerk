@@ -91,7 +91,7 @@ TextWerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
         context = context.end(); // p.item.name  
         context = context.begin('p').addClass('item').addClass('pmid');
         context = context.begin('span').addClass('label').push('doc_type:').end();
-        context = context.begin('span').addClass('value').push('<a href="http://www.ncbi.nlm.nih.gov/pubmed/' + doc_type + '">' + doc_type + '</a>').end();
+       // context = context.begin('span').addClass('value').push('<a href="http://www.ncbi.nlm.nih.gov/pubmed/' + doc_type + '">' + doc_type + '</a>').end();
         context = context.end();
     },
     renderUnselected: function(context, firstTime, classes, content) {

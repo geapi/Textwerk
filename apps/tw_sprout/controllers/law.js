@@ -23,7 +23,7 @@ TextWerk.lawController = SC.ArrayController.create(
 	collectionViewRef: null,
 	searchTermOverview: "",
 	searchTermLaw: "",
-
+    selectedCollection: null,
 
     hightlight: function() {
         var content = this.get('content');
@@ -38,8 +38,8 @@ TextWerk.lawController = SC.ArrayController.create(
  			this.set('selectedObject',this.getPath('selection.firstObject') );
 			//TextWerk.documentDetailController.showDocumentDetailsPane();
 			//TextWerk.documentDetailController.showPickerPanePointer(this.currentDetailView);
-			var selectedCollection = this.get('selectedObject').get('collection');
-			console.log("selected object: "+ selectedCollection);
+			this. set('selectedCollection', this.get('selectedObject').get('collection'));
+			console.log("selected object: "+ this.get('selectedCollection'));
 			//TextWerk.documentCollectionContentsController.set('content',selectedCollection);
             if (TextWerk.LAW_CONTENT_SECONDLEVEL.isFirstResponder) {
                 TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);

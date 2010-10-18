@@ -24,9 +24,8 @@ TextWerk.documentCollectionController = SC.ObjectController.create(
     campaign elements in particular ways.
   */
   isEditable: NO,
-  
-  //contentBinding: 'TextWerk.documentCollectionsController.selection',
-  contentBinding: 'TextWerk.lawController.selection',
+  // this guy ties the know between the selection in the grid and the canvas display of the selected collection
+  contentBinding: 'TextWerk.documentCollectionsController.selectedCollection', 
   contentBindingDefault: SC.Binding.oneWay().single(),
 
   // PUBLIC METHODS

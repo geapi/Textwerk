@@ -104,8 +104,8 @@ TextWerk.LawEntryView = SC.View.extend(SC.ContentDisplay, {
         context = context.end();
     },
     renderUnselected: function(context, firstTime, classes, content) {
-        var id = content.get('guid');
-        id = id + 1;
+        var id = content.get('id');
+        //id = (id + 1);
         var name = content.get('name');
         context = context.setClass(classes);
         context = context.begin('p').addClass('item').addClass('title').push('%@ %@'.fmt('(' + id + ')', name)).end();

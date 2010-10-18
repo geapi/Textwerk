@@ -62,12 +62,11 @@ TextWerk.Document.FIXTURES = [
     collection: '1',
     referrer: '2',
     citee: '1',
-
     position: {y: 300, x: 300}
   },
   
   // ..........................................................
-  // Obama Family
+  // other docs
   // 
   {
     id: '5',
@@ -116,8 +115,8 @@ TextWerk.Document.FIXTURES = [
     type: "Document",
     name: 'Document 4',
     collection: '2',
-    referrer: null,
-    citee: null,
+    referrer: 1,
+    citee: 10,
 
     position: {y: 225, x: 500}
   },
@@ -138,7 +137,7 @@ TextWerk.Document.FIXTURES = [
     type: "Document",
     name: 'Document 6',
     collection: '2',
-    referrer: '9',
+    referrer: '10',
     citee: '8',
     position: {y: 400, x: 550}
   }

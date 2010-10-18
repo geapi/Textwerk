@@ -3,7 +3,6 @@
  * The base document model.
  *
  * @extends TextWerk.Document
- * @author Evin Grano
  *
  * @version 0.1
  * @since 0.1

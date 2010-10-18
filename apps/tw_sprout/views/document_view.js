@@ -21,12 +21,20 @@ TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
     displayProperties: ['content', 'isSelected'],
 
     content: null,
+	mouseDown: function(evt){
+		SC.Logger.log("mouse down on detail");
+	    return NO;	
+	},
+	mouseUp: function(evt){
+		SC.Logger.log("mouse up on detail");
+	    return NO;	
+	},
 
     render: function(context) {
         var c = this.get('content');
         context.addClass('document');
 		var content = this.get('content');
-		var id = content.get('guid');
+		var id = content.get('id');
         id += 1;
         var name = content.get('name');
         var description = content.get('description')?content.get('description'):"n/a";
@@ -57,7 +65,7 @@ TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
         context = context.end();
         sc_super();
         if (this.get("isSelected")) context.addClass("selected");
-		//SC.Logger.log("in render");
+		SC.Logger.log("rendering document");
     },
 
     createChildViews: function() {
@@ -101,7 +109,7 @@ TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
                 width: 125,
                 height: 25
             },
-            textAlign: SC.ALIGN_CENTER,
+            textAlign: SC.ALIGN_CENTER
             //valueBinding: SC.binding('.name', content)
         }));
         childViews.push(contentView);
