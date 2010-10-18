@@ -38,14 +38,14 @@ TextWerk.lawController = SC.ArrayController.create(
  			this.set('selectedObject',this.getPath('selection.firstObject') );
 			//TextWerk.documentDetailController.showDocumentDetailsPane();
 			//TextWerk.documentDetailController.showPickerPanePointer(this.currentDetailView);
-			this. set('selectedCollection', this.get('selectedObject').get('collection'));
+			//this. set('selectedCollection', this.get('selectedObject').get('collection'));
 			console.log("selected object: "+ this.get('selectedCollection'));
 			//TextWerk.documentCollectionContentsController.set('content',selectedCollection);
             if (TextWerk.LAW_CONTENT_SECONDLEVEL.isFirstResponder) {
-                TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
+                //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
             } else
             {
-                TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
+                //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
             }
         }
     }.observes('selection'),

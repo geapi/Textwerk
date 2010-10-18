@@ -17,9 +17,9 @@ TextWerk.documentCollectionContentsController = SC.ArrayController.create(
     contentBindingDefault: SC.Binding.multiple().oneWay(),
     selection: null,
 
-	test: function(){
-		SC.Logger.log("content selection changed: "+ this.get('selection'));
-	}.observes('selection')
+	//test: function(){
+	//	SC.Logger.log("content selection changed: "+ this.get('selection'));
+	//}.observes('selection')
 
 
 });

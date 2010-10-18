@@ -75,7 +75,6 @@ TextWerk.Document.FIXTURES = [
     collection: '2',
     referrer: null,
     citee: null,
-    spouse: null,
     position: {y: 10, x: 10}
   },
   
@@ -116,7 +115,7 @@ TextWerk.Document.FIXTURES = [
     name: 'Document 4',
     collection: '2',
     referrer: 1,
-    citee: 10,
+    citee: null,
 
     position: {y: 225, x: 500}
   },
@@ -138,7 +137,7 @@ TextWerk.Document.FIXTURES = [
     name: 'Document 6',
     collection: '2',
     referrer: '10',
-    citee: '8',
+    citee: null,
     position: {y: 400, x: 550}
   }
 ];

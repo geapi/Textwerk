@@ -28,7 +28,8 @@ TextWerk.lawViews = SC.Page.design({
             classNames: ['family-canvas'],
             contentBinding: SC.Binding.from('TextWerk.documentCollectionContentsController').oneWay(),
 			selectionBinding: 'TextWerk.documentCollectionContentsController.selection',
-            nodeViewDelegate: TextWerk.documentCollectionController
+            nodeViewDelegate: TextWerk.documentCollectionController,
+			exampleView: TextWerk.DocumentView
             
         })
     }),
