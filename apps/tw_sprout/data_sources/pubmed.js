@@ -11,7 +11,7 @@
   @extends SC.DataSource
 */
 sc_require('models/pubmed');
-TextWerk.RESULTS_QUERY = SC.Query.remote(TextWerk.Pubmed, {
+TextWerk.RESULTS_QUERY = SC.Query.local(TextWerk.Pubmed, {
   orderBy: 'guid,title'
 });
 

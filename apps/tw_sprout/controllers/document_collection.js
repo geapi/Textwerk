@@ -14,7 +14,7 @@ sc_require('core');
   that LinkIt can use.
 */
 TextWerk.documentCollectionController = SC.ObjectController.create( 
-  /* @scope */{
+  /* @scope TextWerk.documentCollectionController */{
 
   // PUBLIC PROPERTIES
 

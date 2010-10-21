@@ -27,12 +27,16 @@ TextWerk.documentCollectionsController = SC.ArrayController.create(
         } else
         {
             TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
-			TextWerk.getPath('lawViews.lawSecondLevelView.canvas').displayDidChange();
+			
         }
       
 	  //TextWerk.lawViews.lawSecondLevelView.master
-	   console.log("got a collection change");
+	   
     }.observes('selection'),
+	collectionChanged: function(){
+		TextWerk.getPath('lawViews.lawSecondLevelView.canvas').displayDidChange();
+		console.log("got a collection change");
+	},
     
     addCollection: function(){
       var store = TextWerk.get('store');

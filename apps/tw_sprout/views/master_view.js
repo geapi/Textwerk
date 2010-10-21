@@ -10,7 +10,7 @@ Custom view that renders the overview of a pubmed entry
 
 @extends SC.View */
 TextWerk.MasterView = SC.View.extend(
-/** @scope myApp.MasterView.prototype */ {
+/** @scope TextWerk.MasterView.prototype */ {
  
   classNames: ['master-view'],
  

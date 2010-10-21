@@ -46,6 +46,7 @@ TextWerk.LAW_CONTENT_SECONDLEVEL = SC.Responder.create(
     //console.log("2nd level got first responder");
     //TextWerk.documentCollectionsController.selection = 1;
     TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawSecondLevelView');
+    TextWerk.getPath('lawViews.lawSecondLevelView.canvas').displayDidChange();
     //TextWerk.setPath('mainPage.mainPane.middleView.nowShowing', 'TextWerk.lawViews.lawFullTextView');
   },
   

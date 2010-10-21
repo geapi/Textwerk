@@ -10,7 +10,7 @@
 /*globals LinkIt TextWerk*/
 sc_require('core');
 
-TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
+TextWerk.DocumentView = SC.View.extend(LinkIt.NodeView, {
 	classNames: ['human'],
     layout: {
         top: 0,
@@ -22,54 +22,59 @@ TextWerk.DocumentView = SC.View.extend(SCUI.Cleanup, LinkIt.NodeView, {
 
     content: null,
 	mouseDown: function(evt){
-		SC.Logger.log("mouse down on detail");
+		//SC.Logger.log("mouse down on detail");
 	    return NO;	
 	},
 	mouseUp: function(evt){
-		SC.Logger.log("mouse up on detail");
+		//SC.Logger.log("mouse up on detail");
 	    return NO;	
 	},
 
     render: function(context) {
+		//var c = this.get('content');
+	    //if(c && c.get('isPet')) context.addClass('pet');
+	    //else context.addClass('human');
+	    //sc_super();
+	    //if (this.get("isSelected")) context.addClass("selected");
         var c = this.get('content');
         context.addClass('document');
-		//var content = this.get('content');
-		//var id = content.get('id');
-        //id += 1;
-        //var name = content.get('name');
-        //var description = content.get('description')?content.get('description'):"n/a";
-        //var description_length = description.length;
-		//description = (description_length > 150) ? (description.substr(0,200)+"&hellip;") : description;
-        //var date = content.get('date')?content.get('date'):"n/a";
-        //var doc_type = content.get('doc_type');
-        //
-        //var isSelected = this.get('isSelected');
-        //
-        //
-        ////context = context.begin().addClass('searchResultsContainer');
-        ////context = context.setClass(classes);
-        ////context = context.begin('p').addClass('item').addClass('title').push('%@ %@'.fmt('(' + id + ')', name)).end();
-        ////context = context.end(); // div.top
-        ////context = context.begin().addClass('bottom');
-        //context = context.begin('p').addClass('item').addClass('authors');
-        //context = context.begin('span').addClass('label').push('description:').end();
-        //context = context.begin('span').addClass('value').push(description).end();
-        //context = context.end(); // p.item.company
-        //context = context.begin('p').addClass('item').addClass('date');
-        //context = context.begin('span').addClass('label').push('Date:').end();
-        //context = context.begin('span').addClass('value').push(date).end();
-        //context = context.end(); // p.item.name  
-        //context = context.begin('p').addClass('item').addClass('pmid');
-        //context = context.begin('span').addClass('label').push('doc_type:').end();
-        //context = context.begin('span').addClass('value').push('<a href="http://www.ncbi.nlm.nih.gov/pubmed/' + doc_type + '">' + doc_type + '</a>').end();
-        //context = context.end();
+		var content = this.get('content');
+		var id = content.get('id');
+        id += 1;
+        var name = content.get('name');
+        var description = content.get('description')?content.get('description'):"n/a";
+        var description_length = description.length;
+		description = (description_length > 150) ? (description.substr(0,200)+"&hellip;") : description;
+        var date = content.get('date')?content.get('date'):"n/a";
+        var doc_type = content.get('doc_type');
+        
+        var isSelected = this.get('isSelected');
+        
+        
+        //context = context.begin().addClass('searchResultsContainer');
+        //context = context.setClass(classes);
+        //context = context.begin('p').addClass('item').addClass('title').push('%@ %@'.fmt('(' + id + ')', name)).end();
+        //context = context.end(); // div.top
+        //context = context.begin().addClass('bottom');
+        context = context.begin('p').addClass('item').addClass('authors');
+        context = context.begin('span').addClass('label').push('description:').end();
+        context = context.begin('span').addClass('value').push(description).end();
+        context = context.end(); // p.item.company
+        context = context.begin('p').addClass('item').addClass('date');
+        context = context.begin('span').addClass('label').push('Date:').end();
+        context = context.begin('span').addClass('value').push(date).end();
+        context = context.end(); // p.item.name  
+        context = context.begin('p').addClass('item').addClass('pmid');
+        context = context.begin('span').addClass('label').push('doc_type:').end();
+        context = context.begin('span').addClass('value').push('<a href="http://www.ncbi.nlm.nih.gov/pubmed/' + doc_type + '">' + doc_type + '</a>').end();
+        context = context.end();
         sc_super();
         if (this.get("isSelected")) context.addClass("selected");
-		SC.Logger.log("rendering document");
+		//SC.Logger.log("rendering document");
     },
 
     createChildViews: function() {
-	 SC.Logger.log("in create child views");
+	 //SC.Logger.log("in create child views");
         var childViews = [],
         contentView;
         var content = this.get('content');
