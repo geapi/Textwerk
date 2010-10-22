@@ -24,14 +24,14 @@ TextWerk.LineView = SC.View.extend({
     acceptsFirstResponder: YES,
     mouseDown: function(evt) {
         sc_super(); 
-        console.log("mouse DOWN on CANVAS: " + this.get('cr'));
+        //console.log("mouse DOWN on CANVAS: " + this.get('cr'));
         var cv = this.get('cr'); 
         //cv.mouseDown(evt);
         return NO; 
     },
     mouseUp: function(evt) {
         sc_super();
-        console.log("mouse UP on CANVAS: " + this.get('cr'));
+        //console.log("mouse UP on CANVAS: " + this.get('cr'));
         var cv = this.get('cr'); 
         //cv.mouseUp(evt);
         return NO;

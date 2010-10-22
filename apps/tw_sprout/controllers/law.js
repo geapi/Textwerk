@@ -54,7 +54,17 @@ TextWerk.lawController = SC.ArrayController.create(
         //alert(this.get('status'));
         //console.log(this.get('content'));
         return this.get('content');
-    }.property('status').cacheable()
+    }.property('status').cacheable(),
+
+	previousPage: function(){
+		if (TextWerk.LAW_CONTENT_SECONDLEVEL.isFirstResponder) {
+            TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_TOPLEVEL);
+			this.set('selection', null);
+        } else
+        {
+            //TextWerk.makeFirstResponder(TextWerk.LAW_CONTENT_SECONDLEVEL);
+        }
+	}
 
 	
 

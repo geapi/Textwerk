@@ -54,7 +54,7 @@ TextWerk.MasterView = SC.View.extend(
             action: 'changedCollection',
 			mouseDown:function(evt){
 				sc_super();
-				console.log("mouse down on grid with: "+this.get('canvasRef'));
+				//console.log("mouse down on grid with: "+this.get('canvasRef'));
 				var cv = this.get('canvasRef'); 
 		        cv.mouseDown(evt);
 				return NO;
