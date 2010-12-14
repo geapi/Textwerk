@@ -4,8 +4,22 @@
 # ===========================================================================
 
 # Add initial buildfile information here
+config :all, :required => :sproutcore
 
-config :all, :required => [:sproutcore, :'flot', :'scui', :'sai', :'sai/graphs'], :theme => 'text_werk'
+# CORE FRAMEWORKS
+config :scui, :required => [:sproutcore, :'scui/drawing', :'scui/linkit']
 
-proxy "/searchPubmed", :to => "localhost:3000"
-proxy "/getResultsCount", :to => "localhost:3000"
+# CONFIGURE THEMES
+config :standard_theme, 
+  :theme_name => 'linkit-theme',
+  :test_required  => ['sproutcore/testing'],
+  :debug_required => ['sproutcore/debug']
+  
+# This configuration section will be applied to all bundles used by your
+# application, even bundles that come from other gems.  
+config :text_werk do |c|
+  c[:required] = [:sproutcore, :scui]
+  c[:theme] = :standard_theme
+end
+
+proxy "/documents", :to => "localhost:3000"
