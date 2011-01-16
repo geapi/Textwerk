@@ -4,6 +4,6 @@
 [submodule "frameworks/scui"]
 	path = frameworks/scui
 	url = git@github.com:geapi/sproutcore-ui.git
-[submodule "frameworks/sai"]
-	path = frameworks/sai
-	url = git@github.com:geapi/sai.git
+[submodule "frameworks/ki"]
+	path = frameworks/ki
+	url = git@github.com:FrozenCanuck/Ki.git

@@ -1,5 +1,5 @@
 # ===========================================================================
-# Project:   TextWerk
+# Project:   Textwerk
 # Copyright: ©2010 My Company, Inc.
 # ===========================================================================
 
@@ -8,6 +8,7 @@ config :all, :required => :sproutcore
 
 # CORE FRAMEWORKS
 config :scui, :required => [:sproutcore, :'scui/drawing', :'scui/linkit']
+config :'core-textwerk', :required => [:sproutcore, :'scui/drawing', :'scui/linkit']
 
 # CONFIGURE THEMES
 config :standard_theme, 
@@ -17,8 +18,8 @@ config :standard_theme,
   
 # This configuration section will be applied to all bundles used by your
 # application, even bundles that come from other gems.  
-config :text_werk do |c|
-  c[:required] = [:sproutcore, :scui]
+config :textwerk do |c|
+  c[:required] = [:'core-textwerk', :ki, :sproutcore, :scui]
   c[:theme] = :standard_theme
 end
 
