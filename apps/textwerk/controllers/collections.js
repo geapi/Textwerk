@@ -17,13 +17,14 @@ Textwerk.collectionsController = SC.ArrayController.create(
     selection: null,
     
     changedCollection: function(){
-      Textwerk.getPath('mainPage.mainPane.canvas').displayDidChange();
+        console.log("collection changed");
+     // Textwerk.getPath('mainPage.mainPane.canvas').displayDidChange();
     },
     
     addCollection: function(){
-      var store = Textwerk.get('store');
+      var store = CoreTextwerk.get('store');
       if (store) {
-        var collection = Textwerk.createRecord(Textwerk.Collection, {
+        var collection = CoreTextwerk.createRecord(CoreTextwerk.Collection, {
           name: 'New Collection',
           papers: []
         });
@@ -32,7 +33,17 @@ Textwerk.collectionsController = SC.ArrayController.create(
     
     removeCollection: function(){
       var sel = this.getPath('selection.firstObject');
-      Textwerk.destroyRecord(sel);
-    }
+      CoreTextwerk.destroyRecord(sel);
+    },
+    total: function(){
+        if(this.get('content')){
+        return "Years: (%@)".fmt(this.get('content').get('length'));
+        }else {
+            return "Years: still computing ...";
+        }
+
+
+        //return "Years:";
+    }.property().observes('length')
 
 }) ;

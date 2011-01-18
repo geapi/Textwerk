@@ -9,6 +9,8 @@ Textwerk.dashboardController = SC.ObjectController.create(
 /** @scope Textwerk.dashboardController.prototype */ {
      openDashboard: function() {
         Textwerk.getPath('mainPage.mainPane').append();
+        Textwerk.setPath('mainPage.mainPane.dashboard.nowShowing', 'Textwerk.dashboardPage.dashboard');
+
     }
 });
 

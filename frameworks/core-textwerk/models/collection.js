@@ -31,6 +31,11 @@ CoreTextwerk.Collection = SC.Record.extend(
     return members;
   }.property('papers').cacheable(),
 
+  nameAndCount: function(){
+      return this.get('name') + " (%@)".fmt(this.get('papers').get('length'));
+
+  }.property('papers').cacheable(),
+
   // ..........................................................
   // Methods
   // 
@@ -41,7 +46,7 @@ CoreTextwerk.Collection = SC.Record.extend(
   addMember: function(memberModel) {
     var store = CoreTextwerk.get('store');
     if (store && memberModel) {
-      var member = Textwerk.createRecord(memberModel, {
+      var member = CoreTextwerk.createRecord(memberModel, {
         name: 'Name here...'
       });
       if (member.instanceOf(CoreTextwerk.Paper)){

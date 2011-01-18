@@ -12,6 +12,9 @@
  */
 
 Textwerk.mixin({
+    _citationNetworkShowing: NO,
+    _pageRankShowing: NO,
+    _collaborationNetworkShwoing: NO,
     deleteSelectedMembers: function() {
         var selection, toRemove, collection,
                 len, confirmStr, alertController,
@@ -63,7 +66,19 @@ Textwerk.mixin({
 
         var store = CoreTextwerk.get('store');
         Textwerk.collectionsController.set('content', store.find(CoreTextwerk.Collection));
-        store.find(CoreTextwerk.Paper);
+        //store.find(CoreTextwerk.Paper);
         console.log("at the end of load data, store was: " +store);
+    },
+    showCitationNetwork: function(){
+        return this._citationNetworkShowing = !this._citationNetworkShowing;
+
+    },
+    showPageRank: function(){
+        return this._pageRankShowing = !this._pageRankShowing;
+
+    },
+    showCollaborationNetwork: function(){
+        return this._collaborationNetworkShwoing = !this._collaborationNetworkShwoing;
+
     }
 });

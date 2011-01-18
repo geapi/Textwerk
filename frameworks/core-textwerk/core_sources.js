@@ -20,6 +20,7 @@ CoreTextwerk.Corpus = SC.DataSource.extend(
     /** @scope CoreTextwerk.Corpus.prototype */
 {
 
+        _currentRecordID: 0,
     // ..........................................................
     // QUERY SUPPORT
     //
@@ -103,13 +104,13 @@ CoreTextwerk.Corpus = SC.DataSource.extend(
     retrieveRecord: function(store, storeKey) {
         var url = "/documents";
         var recordType = store.recordTypeFor(storeKey), id = store.idFor(storeKey);
-        SC.Logger.log("retrieve called for: " + recordType);
+        //SC.Logger.log("retrieve called for: " + recordType);
         var id = store.idFor(storeKey);
         var params = {
             store: store,
             storeKey: storeKey
         };
-        console.log("getting papers(s) remotely: "+ store.idFor(storeKey));
+        //console.log("getting papers(s) remotely: "+ store.idFor(storeKey));
         //if (query.get('isLocal')) return NO;
         //SC.Logger.log("remote query");
         //SC.Request.getUrl(url+"?id="+id).header({
@@ -140,13 +141,6 @@ CoreTextwerk.Corpus = SC.DataSource.extend(
     },
 
 
-    createRecord: function(store, storeKey) {
-
-        // TODO: Add handlers to submit new records to the data source.
-        // call store.dataSourceDidComplete(storeKey) when done.
-        return YES; // return YES if you handled the storeKey
-    },
-
     updateRecord: function(store, storeKey) {
 
         // TODO: Add handlers to submit modified record to the data source
@@ -154,11 +148,55 @@ CoreTextwerk.Corpus = SC.DataSource.extend(
         return YES; // return YES if you handled the storeKey
     },
 
-    destroyRecord: function(store, storeKey) {
 
-        // TODO: Add handlers to destroy records on the data source.
-        // call store.dataSourceDidDestroy(storeKey) when done
-        return NO; // return YES if you handled the storeKey
+    /**
+     * Retrieves a single record from the store.
+     *
+     * @param {SC.Record} recordType The type of the record to retrieve.
+     * @param {String|Number} id The ID of the record to retrieve.
+     *
+     * @returns {CoreOrion.Record} The instantiated record.
+     */
+    findRecord: function(recordType, id) {
+        return this.get('store').find(recordType, id);
+    },
+
+    /**
+     * Retrieves all records from the store matching the given query.
+     *
+     * @param {SC.Query} q The query to apply.
+     *
+     * @returns {SC.RecordArray} A SC.RecordArray of matching records.
+     */
+    findRecords: function(q) {
+        return this.get('store').find(q);
+    },
+
+    /**
+     * Creates a new record in the store.
+     *
+     * @param {CoreOrion.Record} recordType The type of the record.
+     * @param {Hash} dataHash The data hash used to seed the new record (optional).
+     *
+     * @returns {CoreOrion.Record} A new record instance.
+     */
+    createRecord: function(recordType, dataHash) {
+        if (!dataHash) dataHash = {};
+
+        // Assign the new record a negative integer ID
+        if (dataHash.id === undefined) {
+            dataHash.id = this._currentRecordID + '';
+            this._currentRecordID--;
+        }
+
+        return this.get('store').createRecord(recordType, dataHash);
+    },
+
+    destroyRecord: function(rec) {
+        if (SC.none(rec) || !SC.kindOf(rec, SC.Record)) return NO;
+        var sk = rec.get('storeKey');
+        this.get('store').destroyRecord(null, null, sk);
+        return YES;
     }
 
 });

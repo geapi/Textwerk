@@ -16,7 +16,7 @@ Textwerk.toolBars = SC.Page.design({
             right: 0,
             height: 45
         },
-        childViews: 'labelView taglineView'.w(),//' searchField searchedTerm loadingImage searchButton'.w(),
+        childViews: 'labelView taglineView searchField searchedTerm searchButton'.w(),//'loadingImage'.w(),
         //searchField brakes it ????
         anchorLocation: SC.ANCHOR_TOP,
 
@@ -111,12 +111,13 @@ Textwerk.toolBars = SC.Page.design({
 	  classNames: ['footer'],
 	  layout: { bottom: 0, left: 0, right: 0, height: 32 },
 	  childViews: 'copyrightLabel'.w(),
+      toolBarSize: 35,
 	  anchorLocation: SC.ANCHOR_BOTTOM,
 
 	  copyrightLabel: SC.LabelView.design({
 	        layout: { centerY: 0, height: 24, centerX: 0, width: 200 },
 			escapeHTML: NO,
-	        value:  "Textwerk &copy; 2011",
+	        value:  "Textwerk &copy; 2011"
 
 	  })
 	})
