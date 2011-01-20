@@ -7,7 +7,7 @@
 CoreTextwerk = SC.Object.create({
 
     /*
-     * Textwerk data source types
+     * CoreTextwerk data source types
      */
     REMOTE_DATA_SOURCE: 0x0001,
     FIXTURES_DATA_SOURCE: 0x0002,

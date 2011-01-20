@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   Textwerk.Collection Unit Test
-// Copyright: ©2010 My Company, Inc.
+// Project:   CoreTextwerk.Author Unit Test
+// Copyright: ©2011 My Company, Inc.
 // ==========================================================================
-/*globals Textwerk module test ok equals same stop start */
+/*globals CoreTextwerk module test ok equals same stop start */
 
-module("Textwerk.Collection");
+module("CoreTextwerk.Author");
 
-// TODO: Replace with real unit test for Collection
+// TODO: Replace with real unit test for Author
 test("test description", function() {
   var expected = "test";
   var result   = "test";

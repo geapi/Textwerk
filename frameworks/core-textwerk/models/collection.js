@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Textwerk.Collection
+// Project:   CoreTextwerk.Collection
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
 /*globals CoreTextwerk */
@@ -12,8 +12,9 @@
   @version 0.1
 */
 CoreTextwerk.Collection = SC.Record.extend(
-/** @scope Textwerk.Collection.prototype */ {
+/** @scope CoreTextwerk.Collection.prototype */ {
 
+  url: "/documents?coll=true",
   primaryKey: 'id',
   name: SC.Record.attr(String, { isRequired: YES, defaultValue: 'Enter Collection Name' }),
   papers: SC.Record.toMany('CoreTextwerk.Paper', {

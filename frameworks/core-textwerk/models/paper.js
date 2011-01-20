@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Textwerk.Paper
+// Project:   CoreTextwerk.Paper
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
 /*globals CoreTextwerk  LinkIt*/
@@ -12,7 +12,8 @@
   @version 0.1
 */
 CoreTextwerk.Paper = SC.Record.extend( LinkIt.Node,
-/** @scope Textwerk.Paper.prototype */ {
+/** @scope CoreTextwerk.Paper.prototype */ {
+    url: "/documents",
   primaryKey: 'id',
   title: SC.Record.attr(String),
   authors: SC.Record.attr(String),

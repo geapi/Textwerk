@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Textwerk.Paper Fixtures
+// Project:   CoreTextwerk.Paper Fixtures
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
 /*globals CoreTextwerk */

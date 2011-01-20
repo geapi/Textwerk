@@ -9,6 +9,7 @@ config :all, :required => :sproutcore
 # CORE FRAMEWORKS
 config :scui, :required => [:sproutcore, :'scui/drawing', :'scui/linkit']
 config :'core-textwerk', :required => [:sproutcore, :'scui/drawing', :'scui/linkit']
+#config :'papercube', :required => [:sproutcore]
 
 # CONFIGURE THEMES
 config :standard_theme, 
@@ -24,3 +25,6 @@ config :textwerk do |c|
 end
 
 proxy "/documents", :to => "localhost:3000"
+proxy "/authors", :to => "localhost:3000"
+proxy "/venues", :to => "localhost:3000"
+proxy "/affiliations", :to => "localhost:3000"

@@ -66,7 +66,11 @@ Textwerk.mixin({
 
         var store = CoreTextwerk.get('store');
         Textwerk.collectionsController.set('content', store.find(CoreTextwerk.Collection));
-        //store.find(CoreTextwerk.Paper);
+        
+        //Textwerk.authorsController.set('content', store.find(CoreTextwerk.Author));
+        //Textwerk.venuesController.set('content', store.find(CoreTextwerk.Venue));
+        //Textwerk.affiliationsController.set('content', store.find(CoreTextwerk.Affiliation));
+        store.find(CoreTextwerk.Paper);
         console.log("at the end of load data, store was: " +store);
     },
     showCitationNetwork: function(){

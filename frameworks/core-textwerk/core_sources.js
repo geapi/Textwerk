@@ -5,10 +5,10 @@
  */
 
 // ==========================================================================
-// Project:   Textwerk.Corpus
+// Project:   CoreTextwerk.Corpus
 // Copyright: ©2011 usebar
 // ==========================================================================
-/*globals CoreTextwerk, Textwerk */
+/*globals Textwerk, CoreTextwerk */
 
 /** @class
 
@@ -20,44 +20,27 @@ CoreTextwerk.Corpus = SC.DataSource.extend(
     /** @scope CoreTextwerk.Corpus.prototype */
 {
 
-        _currentRecordID: 0,
+    _currentRecordID: 0,
     // ..........................................................
     // QUERY SUPPORT
     //
     fetch: function(store, query) {
-        var recordType = query.get('recordType');
-        var url = "/documents";
-        if (recordType == 'CoreTextwerk.Collection') {
-            console.log("getting collection(s) remotely");
-            url = url + "?coll=true";
-            //if (query.get('isLocal')) return NO;
-            //SC.Logger.log("remote query");
+        var recordType = query.get('recordType'), url = recordType.prototype.url, canRequest = YES;
+        console.log("getting " + recordType +" remotely");
+        if (url == SC.empty()) {
+            canRequest = NO;
+        }
+        if (canRequest) {
             SC.Request.getUrl(url).header({
                 'Accept': 'application/json'
             }).json().notify(this, '_didFetch', {
                 query: query,
                 store: store
             }).send();
-
             return YES;
+        } else {
+            return NO;
         }
-        if (recordType == 'CoreTextwerk.Paper') {
-            console.log("getting papers(s) remotely");
-            //if (query.get('isLocal')) return NO;
-            //SC.Logger.log("remote query");
-            SC.Request.getUrl(url).header({
-                'Accept': 'application/json'
-            }).json().notify(this, '_didFetch', {
-                query: query,
-                store: store
-            }).send();
-
-            return YES;
-        }
-
-        // TODO: Add handlers to fetch data for specific queries.
-        // call store.dataSourceDidFetchQuery(query) when done.
-        return NO; // return YES if you handled the query
     },
     _didFetch: function(request, params) {
         //console.log("did fetch  " + request);
@@ -69,26 +52,14 @@ CoreTextwerk.Corpus = SC.DataSource.extend(
             var results = request.get('body');
             //console.log("got body");
             if (results.content) {
-                //console.log("got content");
-                if (recordType == 'CoreTextwerk.Collection') {
-                    //console.log("Collection(s): " + SC.inspect(results.content));
-                    store.loadRecords(CoreTextwerk.Collection, results.content);
-                    console.log("loaded " + results.content.length + " collection(s)");
+                var status = results.status;
+                if (status == "ok") {
+                    store.loadRecords(recordType, results.content);
+                    console.log("loaded " + results.content.length + " of type " + recordType);
                     store.dataSourceDidFetchQuery(query);
-                }
-                if (recordType == 'CoreTextwerk.Paper') {
-                    //console.log("got status: " + results.status);
-                    var status = results.status;
-                    if (status == "undefined" || status == "ok" || status == "connected") {
-                        console.log("got " + results.content.length + " papers(s)");
-                        store.loadRecords(CoreTextwerk.Paper, results.content);
-                        console.log("loaded " + results.content.length + " paper(s)");
-                        store.dataSourceDidFetchQuery(query);
-                    } else if (status == "error") {
-                        console.log("Error: " + results.content);
-                        store.dataSourceDidErrorQuery(query, response);
-                    }
-
+                } else {
+                    console.log("Error: " + results.content);
+                    store.dataSourceDidErrorQuery(query, response);
                 }
             }
         }

@@ -20,6 +20,14 @@ Textwerk.collectionsController = SC.ArrayController.create(
         console.log("collection changed");
      // Textwerk.getPath('mainPage.mainPane.canvas').displayDidChange();
     },
+    _changedSelectedObject: function(){
+        console.log("selection changed: "+this.get('selected'));
+        var selectedCollection = CoreTextwerk.store.find(CoreTextwerk.Collection, this.get('selected'));
+        this.selectObject(selectedCollection);
+        //this.selectObject( this.get('selected'));
+    }.observes('selected'),
+
+    selected: null,
     
     addCollection: function(){
       var store = CoreTextwerk.get('store');
@@ -34,16 +42,6 @@ Textwerk.collectionsController = SC.ArrayController.create(
     removeCollection: function(){
       var sel = this.getPath('selection.firstObject');
       CoreTextwerk.destroyRecord(sel);
-    },
-    total: function(){
-        if(this.get('content')){
-        return "Years: (%@)".fmt(this.get('content').get('length'));
-        }else {
-            return "Years: still computing ...";
-        }
-
-
-        //return "Years:";
-    }.property().observes('length')
+    }
 
 }) ;
