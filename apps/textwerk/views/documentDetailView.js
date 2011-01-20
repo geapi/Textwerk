@@ -5,7 +5,7 @@
 
 /** @class
 
-Custom view that renders the overview of a pubmed entry
+Custom view that renders the overview of a document entry
 
 @extends SC.View
 */
@@ -46,6 +46,7 @@ Textwerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
 		if(isSelected){
 			this.renderSelected(context, firstTime, classes, content);
 		}else{
+            console.log('trying to render unselected');
             this.renderUnselected(context, firstTime, classes, content);
 		}	
 
@@ -78,7 +79,7 @@ Textwerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
         var id = content.get('guid');
         id += 1;
         var title = content.get('title');
-        var authors = content.get('author')?content.get('author'):"n/a";
+        var authors = content.get('authors')?content.get('authors'):"n/a";
         var description_length = authors.length;
 		//description = (description_length > 150) ? (description.substr(0,200)+"&hellip;") : description;
         var year = content.get('year')?content.get('year'):"n/a";
@@ -111,7 +112,7 @@ Textwerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
         var name = content.get('icon');
         context = context.setClass(classes);
 		var icon = sc_static("images/document_icon");
-       // context = context.push('<img src="'+icon+'"style="left: 144px; width: 16px; top: 0px; height: 18px">').end();
-	   context = context.begin('img').addClass('label').push('M').end();
+        context = context.push('<img src="%@" style="left: 144px; width: 16px; top: 0px; height: 18px">'.fmt(icon));
+	    //context = context.begin('img').addClass('label').push('M').end();
     }
 });

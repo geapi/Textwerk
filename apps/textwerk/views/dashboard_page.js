@@ -11,6 +11,9 @@
 
  @extends SC.View
  */
+
+sc_require('views/documentDetailView');
+
 Textwerk.dashboardPage = SC.Page.design({
     dashboard: SC.View.design({
         childViews: 'yearLabel yearSelector authorsLabel authorsSelector venuesLabel venuesSelector affiliationsLabel affiliationsSelector gridView'.w(),
@@ -88,8 +91,9 @@ Textwerk.dashboardPage = SC.Page.design({
             contentView: SC.GridView.design({
                 contentValueKey: 'id',
                 contentBinding: SC.Binding.from('Textwerk.collectionContentController').oneWay(),
-                canEditContent: YES,
-                canReorderContent: YES//,
+                //canEditContent: YES,
+                //canReorderContent: YES,
+                exampleView: Textwerk.documentDetailView
                 //selectionBinding: 'SampleControls.filesController.selection'
                 // selectOnMouseDown: YES,
                 // canReorderContent: YES
