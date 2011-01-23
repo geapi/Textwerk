@@ -1,7 +1,9 @@
 =============================================================================
 Project:   TextWerk
-Copyright: ©2010 My Company, Inc.
+Copyright: ©2011 usebar & Georg Apitz
 =============================================================================
 
-TODO: Describe Your Project
+## Sproutcore front end for Textwerk application
+
+*more details to come ...*
 
