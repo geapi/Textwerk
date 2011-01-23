@@ -15,6 +15,6 @@ Textwerk.collectionContentController = SC.ArrayController.create(
 
   	contentBinding: 'Textwerk.collectionController.members',
     contentBindingDefault: SC.Binding.multiple().oneWay(),
-    selection: null
+    selectionBinding: 'Textwerk.documentController.selection'
 
 }) ;

@@ -46,9 +46,11 @@ div.custom-list-item-view p.item {
 }
 
 div.custom-list-item-view p.authors, div.custom-list-item-view p.date, div.custom-list-item-view p.pmid {
-    margin: 5px 0px 0px 5px;
+    margin: 5px
 }
-
+div.custom-list-item-view p.authors{
+    margin-top: 20px;
+}
 div.custom-list-item-view span.label {
     font-weight: bold;
 }
@@ -69,8 +71,7 @@ div.custom-list-item-view span.fulltext {
 }
 
 div.custom-list-item-view.selected {
-    background-color: #9999FF; /*height: 180px !important;*/
-    z-index: 2;
+
 }
 
 div.second-level-view p {
@@ -91,9 +92,7 @@ div.textwerk-grid {
 }
 
 div.sc-view.custom-list-item-view.sc-collection-item.selected {
-    width: 200px !important;
-    height: 200px !important;
-    z-index: 3;
+
 }
 
 div#loading h1 {
@@ -222,4 +221,38 @@ fieldset input[type="text"], input[type="password"], select, checkbox {
  border-radius:10px;
 }
 select option {border:1px solid #000; background:#010;}*/
+
+.tw-grid .standard{
+    border: 1px solid #ccc;
+    text-align:center;
+    padding: 0;
+}
+.tw-grid .standard img{
+    padding:10px;
+}
+.tw-grid .selected{
+    background-color: #BD8D46; /*height: 180px !important;*/
+    z-index: 2;
+     width: 200px !important;
+    height: 200px !important;
+    z-index: 3;
+    border: 1px solid #ccc;
+      -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+}
+.tw-grid .selected a.closeButton{
+    position: absolute;
+    color: black;
+    right: 8px;
+    top: 8px;
+    margin-bottom: 3px;
+    text-decoration: none;
+    width: 150px;
+    text-align:right;
+    height: 10px;
+}
 

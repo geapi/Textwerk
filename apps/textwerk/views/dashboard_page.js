@@ -12,7 +12,7 @@
  @extends SC.View
  */
 
-sc_require('views/documentDetailView');
+sc_require('views/document_detail_view');
 
 Textwerk.dashboardPage = SC.Page.design({
     dashboard: SC.View.design({
@@ -89,17 +89,26 @@ Textwerk.dashboardPage = SC.Page.design({
             backgroundColor: 'white',
             hasHorizontalScroller: NO,
             contentView: SC.GridView.design({
+                classNames: ['tw-grid'],
                 contentValueKey: 'id',
                 contentBinding: SC.Binding.from('Textwerk.collectionContentController').oneWay(),
-                //canEditContent: YES,
-                //canReorderContent: YES,
-                exampleView: Textwerk.documentDetailView
-                //selectionBinding: 'SampleControls.filesController.selection'
-                // selectOnMouseDown: YES,
-                // canReorderContent: YES
+                rowHeight:40,
+                columnWidth:40,
+                exampleView: Textwerk.documentDetailView,
+                selectionBinding: 'Textwerk.documentController.selection',
+                keyDown: function(evt) {
+                    sc_super();
+                    //console.log('got a keydown with: ' + evt.keyCode);
+                    if (evt.keyCode === 27) { // deselect(close) on escape key
+                        Textwerk.documentController.deselect();
+                        return YES;
+                    } else {
+                        return NO;
+                    }
+                }
             })
         }),
-
+        
         //       SC.GridView.design({
         //   layout:{top:70, left: 0, right:0, bottom: 35},
         //   columnWidth: 150,
