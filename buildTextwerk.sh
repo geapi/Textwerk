@@ -52,3 +52,4 @@ echo "copying index.html to public/en folder"
 #`ln -sf $SC_BUILD_NUMBER ../tw/public/static/sproutcore/en/current`
 #
 #`ln -sf $STANDARD_THEME_BUILD_NUMBER ../tw/public/static/otixo_theme/en/current`
+
