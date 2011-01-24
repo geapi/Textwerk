@@ -14,8 +14,8 @@ Textwerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
 
     _mouse_x: 15,
     _mouse_y: 15,
-    _oldX: 15,
-    _oldY: 15,
+    _oldX: -1,
+    _oldY: -1,
     create: function() {
     },
 
@@ -98,8 +98,8 @@ Textwerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
 
         var newPosition = Textwerk.helper.computePosition(panel, position);
 
-        console.log('position top ' + position.x + " " + position.y);
-        console.log('new position top ' + newPosition.x + " " + newPosition.y);
+        //console.log('position top ' + position.x + " " + position.y);
+        //console.log('new position top ' + newPosition.x + " " + newPosition.y);
         var id = content.get('guid');
         id += 1;
         var title = content.get('title');
@@ -143,7 +143,7 @@ Textwerk.documentDetailView = SC.View.extend(SC.ContentDisplay, {
 
     },
     renderUnselected: function(context, firstTime, classes, content) {
-        console.log('rendering unselected');
+        //console.log('rendering unselected');
         //this.updateLayout();
         var layout = this.get('layout');
         if (firstTime) {

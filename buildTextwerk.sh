@@ -16,7 +16,7 @@ appname='textwerk'
 `rm -rf tmp/build/static/standard_theme`
 # build the app
 echo "building the SC app"
-`sc-build $appname --build='current' -r`
+`sc-build $appname  -rc` ## add this to have buildnumber be current: --build='current'
 
 # get the build number
 export APP_BUILD_NUMBER=`sc-build-number $appname`
@@ -38,10 +38,10 @@ echo "removing index.html from public/en folder"
 
 # copy the index file for the textwerk app to public/en
 echo "copying index.html to public/en folder"
-`cp -r tmp/build/static/textwerk/en/current/index.html ../tw/public/en/`
+`cp -r tmp/build/static/textwerk/en/$APP_BUILD_NUMBER/index.html ../tw/public/en/`
 
 #echo "copying resources folder to tw/public/static/textwerk/en/current/ folder"
-`cp -r tmp/build/static/textwerk/en/current/resources ../tw/public/static/textwerk/en/current`
+`cp -r tmp/build/static/textwerk/en/$APP_BUILD_NUMBER/resources ../tw/public/static/textwerk/en/current`
 
 # creating symlinks, not needed right now, and not supported by heroku since it is a read only file system
 # echo "creating symlinks"
